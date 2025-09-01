@@ -3,16 +3,16 @@ import express from "express";
 import bodyParser from "body-parser";
 import OpenAI from "openai";
 import { config } from "dotenv";
-
+import cors from "cors";
 config();
 const app = express();
-app.use(bodyParser.json());
+app.use(bodyParser.json()).use(cors());
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 app.post("/generate", async (req, res) => {
-  const { quantidade, ano, topico, subTopico } = req.body;
-
+  const { quantidade, ano, topico, subTopico, modelo } = req.body;
+  console.log(req.body);
   // const prompt = `Gere ${quantidade} questão(ões) de matemática do ${ano} do ensino médio, relacionadas ao tema ${topico} e especificamente sobre ${subTopico}.
   // As questões devem seguir rigorosamente as seguintes regras:
   // 1. O enunciado deve ser claro, contextualizado e em português, sem ambiguidades.
@@ -43,7 +43,7 @@ app.post("/generate", async (req, res) => {
 
   try {
     const response = await client.chat.completions.create({
-      model: "gpt-5",
+      model: "gpt-4o",
       messages: [{ role: "user", content: prompt }],
     });
 

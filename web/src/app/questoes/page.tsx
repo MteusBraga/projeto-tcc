@@ -1,9 +1,12 @@
-// app/page.tsx
+// app/questoes/page.tsx
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useGerarQuestoes } from "@/hooks/useGerarQuestoes";
+import { FaExclamationCircle } from "react-icons/fa";
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 
-// Estrutura mockada dos filtros em forma de árvore
 const estruturaMock = [
   {
     ano: "1º ano",
@@ -29,15 +32,6 @@ const estruturaMock = [
           },
         ],
       },
-      {
-        nome: "II",
-        topicos: [
-          {
-            nome: "Geometria",
-            subTopicos: ["Ângulos", "Triângulos", "Polígonos"],
-          },
-        ],
-      },
     ],
   },
   {
@@ -60,45 +54,98 @@ const estruturaMock = [
   },
 ];
 
-// Dados mockados das questões
-const questoesMock = [
-  {
-    enunciado: "Qual é o conjunto universo na teoria dos conjuntos?",
-    alternativas: {
-      A: "É o conjunto formado apenas pelo zero.",
-      B: "É o conjunto que contém todos os elementos em consideração.",
-      C: "É o conjunto vazio.",
-      D: "É um subconjunto próprio de outro conjunto.",
-      E: "É um conjunto unitário.",
-    },
-    correta: "B",
-    justificativa:
-      "O conjunto universo é o que contém todos os elementos de referência em um determinado contexto.",
-  },
-];
-
-export default function Home() {
+export default function QuestoesPage() {
   const [anoSelecionado, setAnoSelecionado] = useState("");
   const [unidadeSelecionada, setUnidadeSelecionada] = useState("");
   const [topicoSelecionado, setTopicoSelecionado] = useState("");
   const [multiSubtopicos, setMultiSubtopicos] = useState(false);
+  const [subTopicosSelecionados, setSubTopicosSelecionados] = useState<
+    string[]
+  >([]);
+  const [modelo, setModelo] = useState(false);
+  const [quantidade, setQuantidade] = useState(3);
+  const [cooldown, setCooldown] = useState(0);
+  const [respostas, setRespostas] = useState<Record<number, string>>({});
 
-  // encontra o ano selecionado
+  const { mutate, data: questoes, isPending } = useGerarQuestoes();
+
+  useEffect(() => {
+    if (cooldown > 0) {
+      const timer = setInterval(() => setCooldown((c) => c - 1), 1000);
+      return () => clearInterval(timer);
+    }
+  }, [cooldown]);
+
   const anoAtual = estruturaMock.find((a) => a.ano === anoSelecionado);
-  // encontra a unidade dentro do ano
   const unidadeAtual = anoAtual?.unidades.find(
     (u) => u.nome === unidadeSelecionada
   );
-  // encontra o tópico dentro da unidade
   const topicoAtual = unidadeAtual?.topicos.find(
     (t) => t.nome === topicoSelecionado
   );
 
+  const handleSubTopicoChange = (sub: string) => {
+    if (multiSubtopicos) {
+      setSubTopicosSelecionados((prev) =>
+        prev.includes(sub) ? prev.filter((s) => s !== sub) : [...prev, sub]
+      );
+    } else {
+      setSubTopicosSelecionados([sub]);
+    }
+  };
+
+  const handleGerarQuestoes = () => {
+    if (
+      !anoSelecionado ||
+      !topicoSelecionado ||
+      subTopicosSelecionados.length === 0
+    )
+      return;
+
+    mutate({
+      quantidade,
+      ano: anoSelecionado,
+      topico: topicoSelecionado,
+      subtopico: subTopicosSelecionados,
+      modelo: modelo ? "ChatGPT 5" : "Outro",
+    });
+
+    setCooldown(60);
+    setRespostas({});
+  };
+
+  const handleResposta = (idx: number, alternativa: string) => {
+    setRespostas((prev) => ({ ...prev, [idx]: alternativa }));
+  };
+
+  const gerarPDF = () => {
+    if (!questoes) return;
+
+    const doc = new jsPDF();
+    doc.setFontSize(14);
+    doc.text("Lista de Questões", 14, 10);
+
+    questoes.forEach((q, idx) => {
+      autoTable(doc, {
+        head: [[`Questão ${idx + 1}`]],
+        body: [
+          [q.enunciado],
+          ...Object.entries(q.alternativas).map(([letra, texto]) => [
+            `${letra}) ${texto}`,
+          ]),
+          [`Correta: ${q.correta}`],
+          [`Justificativa: ${q.justificativa}`],
+        ],
+      });
+    });
+
+    doc.save("questoes.pdf");
+  };
+
   return (
     <div className="p-6">
       {/* Filtros */}
-      <div className="grid grid-cols-4 gap-4 bg-base-200 p-4 rounded-xl shadow">
-        {/* Ano */}
+      <div className="grid grid-cols-5 gap-4 bg-base-200 p-4 rounded-xl shadow">
         <select
           className="select select-bordered"
           value={anoSelecionado}
@@ -114,7 +161,6 @@ export default function Home() {
           ))}
         </select>
 
-        {/* Unidade */}
         <select
           className="select select-bordered"
           value={unidadeSelecionada}
@@ -130,11 +176,13 @@ export default function Home() {
           ))}
         </select>
 
-        {/* Tópico */}
         <select
           className="select select-bordered"
           value={topicoSelecionado}
-          onChange={(e) => setTopicoSelecionado(e.target.value)}
+          onChange={(e) => {
+            setTopicoSelecionado(e.target.value);
+            setSubTopicosSelecionados([]);
+          }}
           disabled={!unidadeSelecionada}
         >
           <option value="">Tópico</option>
@@ -143,15 +191,24 @@ export default function Home() {
           ))}
         </select>
 
-        {/* Checkbox - múltiplos sub-tópicos */}
+        <input
+          type="number"
+          min={1}
+          max={20}
+          value={quantidade}
+          onChange={(e) => setQuantidade(Number(e.target.value))}
+          className="input input-bordered w-full"
+          placeholder="Qtd"
+        />
+
         <label className="label cursor-pointer flex items-center gap-2">
           <input
             type="checkbox"
             className="checkbox"
-            checked={multiSubtopicos}
-            onChange={(e) => setMultiSubtopicos(e.target.checked)}
+            checked={modelo}
+            onChange={(e) => setModelo(e.target.checked)}
           />
-          <span>Gerar vários sub-tópicos</span>
+          <span>ChatGPT 5</span>
         </label>
       </div>
 
@@ -163,26 +220,87 @@ export default function Home() {
             {topicoAtual?.subTopicos.map((s, i) => (
               <label key={i} className="flex items-center gap-2">
                 {multiSubtopicos ? (
-                  <input type="checkbox" className="checkbox" />
+                  <input
+                    type="checkbox"
+                    className="checkbox"
+                    checked={subTopicosSelecionados.includes(s)}
+                    onChange={() => handleSubTopicoChange(s)}
+                  />
                 ) : (
-                  <input type="radio" name="subtopico" className="radio" />
+                  <input
+                    type="radio"
+                    name="subtopico"
+                    className="radio"
+                    checked={subTopicosSelecionados.includes(s)}
+                    onChange={() => handleSubTopicoChange(s)}
+                  />
                 )}
                 <span>{s}</span>
               </label>
             ))}
           </div>
+          <label className="label cursor-pointer flex items-center gap-2 mt-2">
+            <input
+              type="checkbox"
+              className="checkbox"
+              checked={multiSubtopicos}
+              onChange={(e) => {
+                setMultiSubtopicos(e.target.checked);
+                setSubTopicosSelecionados([]);
+              }}
+            />
+            <span>Gerar vários sub-tópicos</span>
+          </label>
         </div>
       )}
 
-      {/* Lista de Questões mockadas */}
+      {/* Botão Gerar Questões */}
+      <div className="mt-4 flex gap-2">
+        <button
+          className="btn btn-primary"
+          disabled={cooldown > 0 || isPending}
+          onClick={handleGerarQuestoes}
+        >
+          {isPending
+            ? "Gerando..."
+            : cooldown > 0
+            ? `Aguarde ${cooldown}s`
+            : "Gerar Questões"}
+        </button>
+
+        {questoes && questoes.length > 0 && (
+          <button className="btn btn-secondary" onClick={gerarPDF}>
+            Imprimir PDF
+          </button>
+        )}
+      </div>
+
+      {/* Loading */}
+      {isPending && (
+        <div className="mt-6 text-center">
+          <span className="loading loading-spinner loading-lg text-primary"></span>
+          <p className="mt-2">Gerando questões...</p>
+        </div>
+      )}
+
+      {/* Lista de Questões */}
       <div className="mt-6 space-y-6">
-        {questoesMock.map((q, idx) => (
+        {questoes?.map((q, idx) => (
           <div
             key={idx}
             className="card bg-base-100 shadow-md border border-base-300"
           >
             <div className="card-body">
-              <h2 className="card-title">Questão {idx + 1}</h2>
+              <div className="flex justify-between items-center">
+                <h2 className="card-title">Questão {idx + 1}</h2>
+                <button
+                  className="text-red-500 hover:text-red-700"
+                  title="Denunciar questão"
+                >
+                  <FaExclamationCircle size={20} />
+                </button>
+              </div>
+
               <p className="mb-4">{q.enunciado}</p>
 
               <div className="space-y-2">
@@ -192,6 +310,8 @@ export default function Home() {
                       type="radio"
                       name={`questao-${idx}`}
                       className="radio"
+                      checked={respostas[idx] === letra}
+                      onChange={() => handleResposta(idx, letra)}
                     />
                     <span>
                       <strong>{letra})</strong> {texto}
@@ -200,17 +320,20 @@ export default function Home() {
                 ))}
               </div>
 
-              <details className="mt-4">
-                <summary className="cursor-pointer text-primary">
-                  Mostrar Resposta
-                </summary>
-                <div className="mt-2">
-                  <p>
-                    <strong>Correta:</strong> {q.correta}
-                  </p>
-                  <p>{q.justificativa}</p>
+              {respostas[idx] && (
+                <div className="mt-4 border-t pt-2">
+                  {respostas[idx] === q.correta ? (
+                    <p className="text-green-600 font-bold">
+                      ✅ Resposta correta!
+                    </p>
+                  ) : (
+                    <p className="text-red-600 font-bold">
+                      ❌ Resposta incorreta. Correta: {q.correta}
+                    </p>
+                  )}
+                  <p className="mt-2">{q.justificativa}</p>
                 </div>
-              </details>
+              )}
             </div>
           </div>
         ))}

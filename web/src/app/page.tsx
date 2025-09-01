@@ -1,161 +1,213 @@
-// app/page.tsx
 "use client";
 
 import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { FaExclamationTriangle } from "react-icons/fa";
+import { jsPDF } from "jspdf";
 
-// Dados mockados dos filtros
-const filtrosMock = {
-  ano: ["1º ano", "2º ano", "3º ano"],
-  unidade: ["I", "II", "III", "IV"],
-  topico: ["Conjuntos numéricos", "Funções", "Geometria"],
-  subTopico: [
-    "Conjunto vazio, unitário e universo",
-    "Subconjuntos",
-    "Operações com conjuntos",
-  ],
-};
-
-// Dados mockados das questões
-const questoesMock = [
-  {
-    enunciado:
-      "Com relação à Lei Orçamentária Anual (LOA), quais são os prazos para envio e aprovação?",
-    alternativas: {
-      A: "Envio até 31 de agosto e aprovação até o encerramento da sessão legislativa.",
-      B: "Envio até 15 de agosto e aprovação até 15 de dezembro.",
-      C: "Envio até 15 de abril e aprovação até 30 de junho.",
-      D: "Envio até 15 de abril e aprovação até o encerramento da sessão legislativa.",
-      E: "Envio até 1º de janeiro e aprovação até 31 de março.",
+// Simulação de backend
+async function generateQuestions(params: {
+  ano: string;
+  unidade: string;
+  topico: string;
+  subTopico: string;
+  quantidade: number;
+  multiplosSubtopicos: boolean;
+}) {
+  await new Promise((res) => setTimeout(res, 1500));
+  return [
+    {
+      enunciado: "Qual é o valor de 2 + 2?",
+      alternativas: {
+        A: "1",
+        B: "2",
+        C: "3",
+        D: "4",
+        E: "5",
+      },
+      correta: "D",
+      justificativa: "2 + 2 = 4, portanto a alternativa correta é D.",
     },
-    correta: "A",
-    justificativa:
-      "Segundo a Constituição Federal, a LOA deve ser enviada até 31 de agosto e aprovada até o fim da sessão legislativa.",
-  },
-  {
-    enunciado: "Qual é o conjunto universo na teoria dos conjuntos?",
-    alternativas: {
-      A: "É o conjunto formado apenas pelo zero.",
-      B: "É o conjunto que contém todos os elementos em consideração.",
-      C: "É o conjunto vazio.",
-      D: "É um subconjunto próprio de outro conjunto.",
-      E: "É um conjunto unitário.",
-    },
-    correta: "B",
-    justificativa:
-      "O conjunto universo é o que contém todos os elementos de referência em um determinado contexto.",
-  },
-];
+  ];
+}
 
-export default function Questoes() {
-  const [filtros, setFiltros] = useState({
-    ano: "",
-    unidade: "",
-    topico: "",
-    subTopico: "",
+export default function QuestoesPage() {
+  const [ano, setAno] = useState("");
+  const [unidade, setUnidade] = useState("");
+  const [topico, setTopico] = useState("");
+  const [subTopico, setSubTopico] = useState("");
+  const [quantidade, setQuantidade] = useState(1);
+  const [multiplosSubtopicos, setMultiplosSubtopicos] = useState(false);
+  const [respostas, setRespostas] = useState<Record<number, string>>({});
+
+  const {
+    mutate,
+    data: questoes,
+    isPending,
+  } = useMutation({
+    mutationFn: generateQuestions,
   });
-  const handleFiltroChange = (
-    e: React.ChangeEvent<HTMLSelectElement>,
-    campo: string
-  ) => {
-    console.log(filtros);
-    setFiltros({ ...filtros, [campo]: e.target.value });
+
+  const handleGenerate = () => {
+    mutate({
+      ano,
+      unidade,
+      topico,
+      subTopico,
+      quantidade,
+      multiplosSubtopicos,
+    });
   };
 
-  // Aqui futuramente você pode filtrar as questões com base nos filtros
-  const questoesFiltradas = questoesMock;
+  const handleResponder = (index: number, alternativa: string) => {
+    setRespostas((prev) => ({ ...prev, [index]: alternativa }));
+  };
+
+  const exportPDF = () => {
+    if (!questoes) return;
+    const doc = new jsPDF();
+    questoes.forEach((q, i) => {
+      doc.text(`${i + 1}. ${q.enunciado}`, 10, 20 + i * 50);
+      Object.entries(q.alternativas).forEach(([key, value], j) => {
+        doc.text(`${key}) ${value}`, 15, 30 + i * 50 + j * 8);
+      });
+    });
+    doc.save("questoes.pdf");
+  };
 
   return (
-    <div className="p-6">
-      {/* Filtros */}
-      <div className="grid grid-cols-5 gap-4 bg-base-200 p-4 rounded-xl shadow">
+    <div className="p-6 space-y-6">
+      {/* Filtro */}
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         <select
-          className="select select-bordered"
-          value={filtros.ano}
-          onChange={(e) => handleFiltroChange(e, "ano")}
+          value={ano}
+          onChange={(e) => setAno(e.target.value)}
+          className="border p-2 rounded"
         >
-          <option value="">Ano</option>
-          {filtrosMock.ano.map((a, i) => (
-            <option key={i}>{a}</option>
-          ))}
+          <option value="">Selecione o ano</option>
+          <option value="1">1º ano</option>
+          <option value="2">2º ano</option>
+          <option value="3">3º ano</option>
         </select>
 
         <select
-          className="select select-bordered"
-          value={filtros.unidade}
-          onChange={(e) => handleFiltroChange(e, "unidade")}
+          value={unidade}
+          onChange={(e) => setUnidade(e.target.value)}
+          className="border p-2 rounded"
         >
-          <option value="">Unidade</option>
-          {filtrosMock.unidade.map((u, i) => (
-            <option key={i}>{u}</option>
-          ))}
+          <option value="">Selecione a unidade</option>
+          <option value="1">Unidade 1</option>
+          <option value="2">Unidade 2</option>
         </select>
 
         <select
-          className="select select-bordered"
-          value={filtros.topico}
-          onChange={(e) => handleFiltroChange(e, "topico")}
+          value={topico}
+          onChange={(e) => setTopico(e.target.value)}
+          className="border p-2 rounded"
         >
-          <option value="">Tópico</option>
-          {filtrosMock.topico.map((t, i) => (
-            <option key={i}>{t}</option>
-          ))}
+          <option value="">Selecione o tópico</option>
+          <option value="funcoes">Funções</option>
+          <option value="equacoes">Equações</option>
         </select>
 
         <select
-          className="select select-bordered"
-          value={filtros.subTopico}
-          onChange={(e) => handleFiltroChange(e, "subTopico")}
+          value={subTopico}
+          onChange={(e) => setSubTopico(e.target.value)}
+          className="border p-2 rounded"
         >
-          <option value="">Subtópico</option>
-          {filtrosMock.subTopico.map((s, i) => (
-            <option key={i}>{s}</option>
-          ))}
+          <option value="">Selecione o subtópico</option>
+          <option value="afim">Função Afim</option>
+          <option value="quadratica">Função Quadrática</option>
         </select>
 
-        <button className="btn btn-primary">Filtrar</button>
+        <div className="flex items-center gap-2">
+          <input
+            type="checkbox"
+            checked={multiplosSubtopicos}
+            onChange={(e) => setMultiplosSubtopicos(e.target.checked)}
+          />
+          <label>Gerar com múltiplos subtópicos</label>
+        </div>
+
+        <input
+          type="number"
+          min={1}
+          max={20}
+          value={quantidade}
+          onChange={(e) => setQuantidade(Number(e.target.value))}
+          className="border p-2 rounded"
+          placeholder="Qtd. de questões"
+        />
       </div>
 
-      {/* Lista de Questões */}
-      <div className="mt-6 space-y-6">
-        {questoesFiltradas.map((q, idx) => (
-          <div
-            key={idx}
-            className="card bg-base-100 shadow-md border border-base-300"
-          >
-            <div className="card-body">
-              <h2 className="card-title">Questão {idx + 1}</h2>
-              <p className="mb-4">{q.enunciado}</p>
+      <button
+        onClick={handleGenerate}
+        className="bg-blue-600 text-white px-4 py-2 rounded"
+      >
+        Gerar Questões
+      </button>
 
-              <div className="space-y-2">
-                {Object.entries(q.alternativas).map(([letra, texto]) => (
-                  <label key={letra} className="flex items-center gap-2">
-                    <input
-                      type="radio"
-                      name={`questao-${idx}`}
-                      className="radio"
-                    />
-                    <span>
-                      <strong>{letra})</strong> {texto}
-                    </span>
-                  </label>
+      {isPending && (
+        <div className="text-center animate-pulse text-lg font-semibold text-gray-600">
+          ⏳ Gerando questões, aguarde...
+        </div>
+      )}
+
+      {/* Exibição das questões */}
+      {questoes && (
+        <div className="space-y-6">
+          {questoes.map((q, i) => (
+            <div key={i} className="border p-4 rounded shadow-sm">
+              <div className="flex justify-between items-center">
+                <h3 className="font-semibold">
+                  {i + 1}. {q.enunciado}
+                </h3>
+                <button className="text-red-600">
+                  <FaExclamationTriangle />
+                </button>
+              </div>
+
+              <div className="space-y-2 mt-2">
+                {Object.entries(q.alternativas).map(([key, value]) => (
+                  <button
+                    key={key}
+                    onClick={() => handleResponder(i, key)}
+                    className={`block w-full text-left px-3 py-2 rounded border ${
+                      respostas[i] === key
+                        ? "bg-blue-100 border-blue-400"
+                        : "hover:bg-gray-100"
+                    }`}
+                  >
+                    {key}) {value}
+                  </button>
                 ))}
               </div>
 
-              <details className="mt-4">
-                <summary className="cursor-pointer text-primary">
-                  Mostrar Resposta
-                </summary>
-                <div className="mt-2">
-                  <p>
-                    <strong>Correta:</strong> {q.correta}
+              {respostas[i] && (
+                <div className="mt-3 p-2 rounded bg-gray-50 border-l-4 border-green-500">
+                  {respostas[i] === q.correta ? (
+                    <p className="text-green-700">✅ Resposta correta!</p>
+                  ) : (
+                    <p className="text-red-700">
+                      ❌ Resposta incorreta. Correta: {q.correta}
+                    </p>
+                  )}
+                  <p className="mt-1 text-gray-700">
+                    <strong>Justificativa:</strong> {q.justificativa}
                   </p>
-                  <p>{q.justificativa}</p>
                 </div>
-              </details>
+              )}
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+
+          <button
+            onClick={exportPDF}
+            className="bg-green-600 text-white px-4 py-2 rounded"
+          >
+            📄 Exportar PDF
+          </button>
+        </div>
+      )}
     </div>
   );
 }
