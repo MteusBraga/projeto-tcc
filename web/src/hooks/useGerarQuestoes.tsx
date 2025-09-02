@@ -22,7 +22,7 @@ const urlProd = "https://api-projeto-tcc.onrender.com/generate";
 export function useGerarQuestoes() {
   return useMutation<Questao[], Error, Params>({
     mutationFn: async (params: Params) => {
-      const res = await fetch(urlDev, {
+      const res = await fetch(urlProd, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(params),
