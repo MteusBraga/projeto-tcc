@@ -17,11 +17,12 @@ interface Params {
   subtopico: string[];
   modelo: string;
 }
-const urlProd = "https://api-projeto-tcc.onrender.com:3001/generate";
+const urlDev = "http://localhost:3001/generate";
+const urlProd = "https://api-projeto-tcc.onrender.com/generate";
 export function useGerarQuestoes() {
   return useMutation<Questao[], Error, Params>({
     mutationFn: async (params: Params) => {
-      const res = await fetch(urlProd, {
+      const res = await fetch(urlDev, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(params),
