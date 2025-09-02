@@ -39,17 +39,24 @@ app.post("/generate", async (req, res) => {
   // `;
 
   const prompt = `
-  Gere ${quantidade} questão(ões) de matemática do ${ano} do ensino médio de ${topico} sobre ${subTopico}. Evite fazer questões muito semelhantes entre si e com enunciados simples demais. As questões devem ter um enunciado claro e 5 alternativas (A, B, C, D, E), sendo apenas uma correta. Forneça também a justificativa da resposta correta. A saída deve ser apenas um JSON nesse formato: [ { "enunciado": "texto...", "alternativas": { "A": "texto...", "B": "texto...", "C": "texto...", "D": "texto...", "E": "texto..." }, "correta": "B", "justificativa": "texto..." } ]`;
+  Gere ${quantidade} questão(ões) de matemática do ${ano} do ensino médio de ${topico} sobre ${subTopico}. 
+  Evite fazer questões com enunciados muito semelhantes entre si e evite enunciados simples demais com pouco texto, de forma que não sejam triviais.
+  As questões devem ter um enunciado claro e 5 alternativas (A, B, C, D, E), sendo apenas uma correta. 
+  Forneça também a justificativa da resposta correta. 
+  A saída deve ser apenas um JSON nesse formato: 
+  [ { "enunciado": "texto...", "alternativas": { "A": "texto...", "B": "texto...", "C": "texto...", "D": "texto...", "E": "texto..." }, "correta": "B", "justificativa": "texto..." } ]
+  Para questões com equações, retorne apenas a parte do enunciado ou da alternativa que é uma equação em latex.
+  `;
 
   try {
     const response = await client.chat.completions.create({
-      model: "gpt-4o",
+      model: "gpt-5",
       messages: [{ role: "user", content: prompt }],
     });
 
     let text = response.choices[0].message?.content ?? "[]";
     text = text.replace(/```json|```/g, "").trim();
-
+    console.log("Resposta do modelo:", text);
     let data;
     try {
       data = JSON.parse(text);

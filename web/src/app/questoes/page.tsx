@@ -6,6 +6,8 @@ import { useGerarQuestoes } from "@/hooks/useGerarQuestoes";
 import { FaExclamationCircle } from "react-icons/fa";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
+import "katex/dist/katex.min.css";
+import { InlineMath, BlockMath } from "react-katex";
 
 const estruturaMock = [
   {
@@ -15,19 +17,126 @@ const estruturaMock = [
         nome: "I",
         topicos: [
           {
-            nome: "Conjuntos numéricos",
+            nome: "Conjuntos",
             subTopicos: [
+              "Noção de conjunto",
+              "Propriedades",
+              "Igualdade de conjuntos",
               "Conjunto vazio, unitário e universo",
-              "Subconjuntos",
+              "Subconjuntos e a relação de inclusão",
+              "Conjunto das partes",
+              "Complementar de um conjunto",
               "Operações com conjuntos",
+            ],
+          },
+          {
+            nome: "Conjuntos Numéricos",
+            subTopicos: [
+              "Conjunto dos números naturais",
+              "Conjunto dos números inteiros",
+              "Conjunto dos números racionais",
+              "Conjunto dos números irracionais",
+              "Conjunto dos números reais",
+              "Intervalos",
+              "Situações problemas",
             ],
           },
           {
             nome: "Funções",
             subTopicos: [
-              "Função afim",
-              "Função quadrática",
+              "Noção intuitiva de função",
+              "Noção de função via conjuntos",
+              "Domínio, contradomínio e imagem",
+              "Gráfico de uma função",
+              "Análise de gráfico",
+              "Função injetiva, sobrejetiva e bijetiva",
+              "Função composta",
+              "Função inversa",
+            ],
+          },
+        ],
+      },
+      {
+        nome: "II",
+        topicos: [
+          {
+            nome: "Função afim",
+            subTopicos: [
+              "Conceitos e definições",
+              "Casos particulares da função afim",
+              "Valor de uma função afim",
+              "Taxa de variação de uma função",
+              "Gráfico da função afim",
+              "Função afim crescente e decrescente",
+              "Estudo do sinal da função afim",
+              "Inequações do 1º grau com uma variável em R",
+              "Resolução de inequações",
+              "Sistemas de inequações do 1º grau",
+              "Inequação - produto e inequação quociente",
+            ],
+          },
+          {
+            nome: "Função quadrática",
+            subTopicos: [
+              "Introdução e conceitos básicos",
+              "Situações em que aparece a função quadrática",
+              "Valor da função quadrática em um ponto",
+              "Zero da função quadrática",
+              "Gráfico da função quadrática",
+              "A parábola e suas intersecções com os eixos",
+              "Imagem da função quadrática",
+              "Estudo do sinal da função quadrática",
+              "Inequações do 2º grau",
+            ],
+          },
+        ],
+      },
+      {
+        nome: "III",
+        topicos: [
+          {
+            nome: "Função Modular",
+            subTopicos: [
+              "Definição",
+              "Propriedades",
+              "Gráfico da função modular",
+              "Equações e inequações modulares",
+            ],
+          },
+          {
+            nome: "Função Exponencial",
+            subTopicos: [
+              "Revisão de potenciação",
+              "Simplificação de expressões",
               "Função exponencial",
+              "Equações exponenciais",
+              "Inequações exponenciais",
+            ],
+          },
+          {
+            nome: "Logaritmo e função logarítmica",
+            subTopicos: [
+              "Logaritmo",
+              "Função logarítmica",
+              "Equações logarítmicas",
+            ],
+          },
+        ],
+      },
+      {
+        nome: "IV",
+        topicos: [
+          {
+            nome: "Sequências numéricas",
+            subTopicos: [
+              "Lei de formação de uma sequência",
+              "Progressões aritméticas",
+              "Lei de formação de uma PA",
+              "Soma de termos de uma PA",
+              "Progressões Geométricas",
+              "Lei de formação de uma PG",
+              "Soma de n termos de uma PG",
+              "Soma de termos de uma PG convergente",
             ],
           },
         ],
@@ -43,9 +152,180 @@ const estruturaMock = [
           {
             nome: "Trigonometria",
             subTopicos: [
-              "Razões trigonométricas",
-              "Lei dos senos",
+              "O triângulo Retângulo",
+              "Teorema de Pitágoras",
+              "Relações métricas",
+              "Razões trigonométricas no triângulo retângulo",
+              "O ciclo trigonométrico",
+              "Relação entre arcos e ângulos",
+              "Arcos côngruos e ângulos côngruos",
+              "O seno, o cosseno e a tangente no ciclo",
+              "A trigonometria num triângulo qualquer",
               "Lei dos cossenos",
+              "Lei dos senos",
+              "A função Seno",
+              "Propriedades da função seno (domínio, período e imagem)",
+              "Gráfico da função seno",
+              "A função cosseno",
+              "Propriedades da função cosseno (domínio, período e imagem)",
+              "Gráfico da função cosseno",
+              "A função tangente",
+              "Propriedades da função tangente (domínio, período e imagem)",
+              "Gráfico da função tangente",
+            ],
+          },
+        ],
+      },
+      {
+        nome: "II",
+        topicos: [
+          {
+            nome: "Matrizes",
+            subTopicos: [
+              "O conceito de matriz",
+              "Tipos de matrizes",
+              "Operações com matrizes",
+              "A matriz inversa",
+              "Determinante de uma matriz quadrada",
+              "Algoritmos para o cálculo de determinantes (Regra de Sarrus, Teorema de Laplace, Teorema de Chió)",
+              "Propriedades dos determinantes",
+            ],
+          },
+          {
+            nome: "Sistemas Lineares",
+            subTopicos: [
+              "Conceito de sistema linear",
+              "Representação de um sistema através de uma equação matricial",
+              "Regra de Cramer",
+              "Escalonamento de sistemas lineares",
+              "Discussão de um sistema",
+            ],
+          },
+        ],
+      },
+      {
+        nome: "III",
+        topicos: [
+          {
+            nome: "Alguns conceitos de Geometria Plana",
+            subTopicos: [
+              "Polígonos",
+              "Polígonos regulares",
+              "Área das principais superfícies poligonais planas",
+              "Circunferência e círculo",
+              "Área do círculo",
+            ],
+          },
+          {
+            nome: "Geometria Espacial",
+            subTopicos: [
+              "Ideias gerais",
+              "Pontos, retas e planos",
+              "Posições relativas",
+              "Projeção ortogonal e distância",
+              "Estudo dos poliedros",
+              "Prismas: áreas e volumes",
+              "Pirâmides: áreas e volumes",
+              "Tronco de pirâmide reta",
+              "Cilindro",
+              "Cone",
+              "Esfera",
+            ],
+          },
+        ],
+      },
+      {
+        nome: "IV",
+        topicos: [
+          {
+            nome: "Análise Combinatória e probabilidade e tratamento da informação",
+            subTopicos: [
+              "Contagem",
+              "Fatorial de um número natural",
+              "Permutações",
+              "Arranjo simples",
+              "Combinação simples",
+              "Triângulo de Pascal",
+              "Binômio de Newton",
+              "Introdução ao estudo das probabilidades",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    ano: "3º ano",
+    unidades: [
+      {
+        nome: "I",
+        topicos: [
+          {
+            nome: "Matemática financeira",
+            subTopicos: [
+              "Porcentagem",
+              "Taxa Percentual",
+              "Juros Simples",
+              "Desconto comercial simples",
+              "Juros Compostos",
+              "Valor atual na capitalização composta",
+              "Tratamento da informação a partir dos conceitos da Matemática Financeira",
+            ],
+          },
+        ],
+      },
+      {
+        nome: "II",
+        topicos: [
+          {
+            nome: "Estatística Básica",
+            subTopicos: [
+              "Noções de estatística",
+              "Distribuição de frequências",
+              "Representações gráficas",
+              "Histogramas e Polígono de frequência",
+              "Tratamento da informação a partir dos conceitos estatísticos",
+              "Aplicações da Estatística em situações problemas",
+              "Estudo de gráficos e tabelas envolvendo informações estatísticas",
+            ],
+          },
+        ],
+      },
+      {
+        nome: "III",
+        topicos: [
+          {
+            nome: "Geometria Analítica",
+            subTopicos: [
+              "O ponto",
+              "Ponto médio",
+              "Distância entre pontos",
+              "A reta",
+              "Posições relativas entre retas no plano",
+              "Distância entre ponto e reta",
+              "Medida da superfície triangular a partir dos seus vértices",
+              "Problemas com distâncias",
+            ],
+          },
+        ],
+      },
+      {
+        nome: "IV",
+        topicos: [
+          {
+            nome: "Circunferências",
+            subTopicos: [
+              "Equações da circunferência",
+              "Posições relativas entre circunferências",
+            ],
+          },
+          {
+            nome: "Cônicas",
+            subTopicos: [
+              "Secções cônicas",
+              "A elipse",
+              "A parábola",
+              "A hipérbole",
             ],
           },
         ],
@@ -53,6 +333,24 @@ const estruturaMock = [
     ],
   },
 ];
+
+// Componente para renderizar texto que pode conter equações LaTeX
+const LatexText = ({ text }: { text: string }) => {
+  // Divide o texto em partes normais e equações LaTeX
+  const parts = text.split(/(\$.*?\$)/);
+
+  return (
+    <>
+      {parts.map((part, index) => {
+        if (part.startsWith("$") && part.endsWith("$")) {
+          const equation = part.slice(1, -1);
+          return <InlineMath key={index} math={equation} />;
+        }
+        return <span key={index}>{part}</span>;
+      })}
+    </>
+  );
+};
 
 export default function QuestoesPage() {
   const [anoSelecionado, setAnoSelecionado] = useState("");
@@ -65,7 +363,13 @@ export default function QuestoesPage() {
   const [modelo, setModelo] = useState(false);
   const [quantidade, setQuantidade] = useState(3);
   const [cooldown, setCooldown] = useState(0);
+
+  // respostas confirmadas
   const [respostas, setRespostas] = useState<Record<number, string>>({});
+  // alternativas escolhidas antes de confirmar
+  const [selecionadas, setSelecionadas] = useState<Record<number, string>>({});
+  // status de bloqueio (já respondeu)
+  const [respondidas, setRespondidas] = useState<Record<number, boolean>>({});
 
   const { mutate, data: questoes, isPending } = useGerarQuestoes();
 
@@ -112,10 +416,14 @@ export default function QuestoesPage() {
 
     setCooldown(60);
     setRespostas({});
+    setSelecionadas({});
+    setRespondidas({});
   };
 
-  const handleResposta = (idx: number, alternativa: string) => {
-    setRespostas((prev) => ({ ...prev, [idx]: alternativa }));
+  const confirmarResposta = (idx: number) => {
+    if (!selecionadas[idx]) return; // só confirma se tiver selecionado algo
+    setRespostas((prev) => ({ ...prev, [idx]: selecionadas[idx] }));
+    setRespondidas((prev) => ({ ...prev, [idx]: true }));
   };
 
   const gerarPDF = () => {
@@ -125,16 +433,17 @@ export default function QuestoesPage() {
     doc.setFontSize(14);
     doc.text("Lista de Questões", 14, 10);
 
+    // Para o PDF, vamos usar texto simples (sem formatação LaTeX)
     questoes.forEach((q, idx) => {
       autoTable(doc, {
         head: [[`Questão ${idx + 1}`]],
         body: [
-          [q.enunciado],
+          [q.enunciado.replace(/\$/g, "")], // Remove os marcadores $ para o PDF
           ...Object.entries(q.alternativas).map(([letra, texto]) => [
-            `${letra}) ${texto}`,
+            `${letra}) ${texto.replace(/\$/g, "")}`,
           ]),
           [`Correta: ${q.correta}`],
-          [`Justificativa: ${q.justificativa}`],
+          [`Justificativa: ${q.justificativa.replace(/\$/g, "")}`],
         ],
       });
     });
@@ -301,7 +610,9 @@ export default function QuestoesPage() {
                 </button>
               </div>
 
-              <p className="mb-4">{q.enunciado}</p>
+              <div className="mb-4">
+                <LatexText text={q.enunciado} />
+              </div>
 
               <div className="space-y-2">
                 {Object.entries(q.alternativas).map(([letra, texto]) => (
@@ -310,17 +621,28 @@ export default function QuestoesPage() {
                       type="radio"
                       name={`questao-${idx}`}
                       className="radio"
-                      checked={respostas[idx] === letra}
-                      onChange={() => handleResposta(idx, letra)}
+                      disabled={respondidas[idx]} // bloqueia depois de responder
+                      checked={selecionadas[idx] === letra}
+                      onChange={() =>
+                        setSelecionadas((prev) => ({ ...prev, [idx]: letra }))
+                      }
                     />
                     <span>
-                      <strong>{letra})</strong> {texto}
+                      <strong>{letra})</strong> <LatexText text={texto} />
                     </span>
                   </label>
                 ))}
               </div>
 
-              {respostas[idx] && (
+              {!respondidas[idx] ? (
+                <button
+                  className="btn btn-sm btn-success mt-3 w-50"
+                  onClick={() => confirmarResposta(idx)}
+                  disabled={!selecionadas[idx]}
+                >
+                  Responder
+                </button>
+              ) : (
                 <div className="mt-4 border-t pt-2">
                   {respostas[idx] === q.correta ? (
                     <p className="text-green-600 font-bold">
@@ -331,7 +653,9 @@ export default function QuestoesPage() {
                       ❌ Resposta incorreta. Correta: {q.correta}
                     </p>
                   )}
-                  <p className="mt-2">{q.justificativa}</p>
+                  <p className="mt-2">
+                    <LatexText text={q.justificativa} />
+                  </p>
                 </div>
               )}
             </div>
