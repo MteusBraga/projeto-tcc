@@ -39,14 +39,34 @@ app.post("/generate", async (req, res) => {
   // `;
 
   const prompt = `
-  Gere ${quantidade} questão(ões) de matemática do ${ano} do ensino médio de ${topico} sobre ${subTopico}. 
-  Evite fazer questões com enunciados muito semelhantes entre si e evite enunciados simples demais com pouco texto, de forma que não sejam triviais.
-  As questões devem ter um enunciado claro e 5 alternativas (A, B, C, D, E), sendo apenas uma correta. 
-  Forneça também a justificativa da resposta correta. 
-  A saída deve ser apenas um JSON nesse formato: 
-  [ { "enunciado": "texto...", "alternativas": { "A": "texto...", "B": "texto...", "C": "texto...", "D": "texto...", "E": "texto..." }, "correta": "B", "justificativa": "texto..." } ]
-  Para questões com equações, retorne apenas a parte do enunciado ou da alternativa que é uma equação em latex.
-  `;
+Gere ${quantidade} questão(ões) de matemática do ${ano} do ensino médio sobre ${topico} - ${subTopico}. 
+
+REGRAS IMPORTANTES:
+1. Evite enunciados muito semelhantes entre si
+2. Evite enunciados simples demais com pouco texto
+3. Cada questão deve ter um enunciado claro e 5 alternativas (A, B, C, D, E)
+4. Apenas uma alternativa deve ser correta
+5. Forneça justificativa detalhada da resposta correta
+6. Use formatação LaTeX para equações, funções e fórmulas
+7. NÃO use escape Unicode para caracteres especiais (use "ã" em vez de "\\u00e3")
+8. Mantenha a formatação LaTeX dentro de $...$ ou $$...$$
+
+A saída deve ser APENAS um JSON válido neste formato:
+[
+  {
+    "enunciado": "texto com fórmulas em $\\LaTeX$",
+    "alternativas": {
+      "A": "alternativa A",
+      "B": "alternativa B", 
+      "C": "alternativa C",
+      "D": "alternativa D",
+      "E": "alternativa E"
+    },
+    "correta": "B",
+    "justificativa": "explicação detalhada com $\\LaTeX$"
+  }
+]
+`;
 
   try {
     const response = await client.chat.completions.create({
