@@ -334,10 +334,22 @@ const estruturaMock = [
   },
 ];
 
+// Função para decodificar Unicode
+const decodeUnicode = (text: string): string => {
+  return text
+    .replace(/\\u[\dA-F]{4}/gi, (match) => {
+      return String.fromCharCode(parseInt(match.replace(/\\u/g, ""), 16));
+    })
+    .replace(/R\$/g, "R\\$"); // escapa o R$ para não bugar o LaTeX
+};
+
 // Componente para renderizar texto que pode conter equações LaTeX
 const LatexText = ({ text }: { text: string }) => {
+  // Decodifica Unicode primeiro
+  const decodedText = decodeUnicode(text);
+
   // Divide o texto em partes normais e equações LaTeX
-  const parts = text.split(/(\$.*?\$)/);
+  const parts = decodedText.split(/(\$.*?\$)/);
 
   return (
     <>
@@ -433,17 +445,24 @@ export default function QuestoesPage() {
     doc.setFontSize(14);
     doc.text("Lista de Questões", 14, 10);
 
-    // Para o PDF, vamos usar texto simples (sem formatação LaTeX)
+    // Para o PDF, vamos usar texto simples (decodificando Unicode)
     questoes.forEach((q, idx) => {
+      const enunciado = decodeUnicode(q.enunciado).replace(/\$/g, "");
+
       autoTable(doc, {
         head: [[`Questão ${idx + 1}`]],
         body: [
-          [q.enunciado.replace(/\$/g, "")], // Remove os marcadores $ para o PDF
+          [enunciado],
           ...Object.entries(q.alternativas).map(([letra, texto]) => [
-            `${letra}) ${texto.replace(/\$/g, "")}`,
+            `${letra}) ${decodeUnicode(texto).replace(/\$/g, "")}`,
           ]),
           [`Correta: ${q.correta}`],
-          [`Justificativa: ${q.justificativa.replace(/\$/g, "")}`],
+          [
+            `Justificativa: ${decodeUnicode(q.justificativa).replace(
+              /\$/g,
+              ""
+            )}`,
+          ],
         ],
       });
     });
@@ -528,38 +547,22 @@ export default function QuestoesPage() {
           <div className="flex flex-col gap-2">
             {topicoAtual?.subTopicos.map((s, i) => (
               <label key={i} className="flex items-center gap-2">
-                {multiSubtopicos ? (
-                  <input
-                    type="checkbox"
-                    className="checkbox"
-                    checked={subTopicosSelecionados.includes(s)}
-                    onChange={() => handleSubTopicoChange(s)}
-                  />
-                ) : (
-                  <input
-                    type="radio"
-                    name="subtopico"
-                    className="radio"
-                    checked={subTopicosSelecionados.includes(s)}
-                    onChange={() => handleSubTopicoChange(s)}
-                  />
-                )}
+                <input
+                  type="checkbox"
+                  className="checkbox"
+                  checked={subTopicosSelecionados.includes(s)}
+                  onChange={() =>
+                    setSubTopicosSelecionados((prev) =>
+                      prev.includes(s)
+                        ? prev.filter((x) => x !== s)
+                        : [...prev, s]
+                    )
+                  }
+                />
                 <span>{s}</span>
               </label>
             ))}
           </div>
-          <label className="label cursor-pointer flex items-center gap-2 mt-2">
-            <input
-              type="checkbox"
-              className="checkbox"
-              checked={multiSubtopicos}
-              onChange={(e) => {
-                setMultiSubtopicos(e.target.checked);
-                setSubTopicosSelecionados([]);
-              }}
-            />
-            <span>Gerar vários sub-tópicos</span>
-          </label>
         </div>
       )}
 

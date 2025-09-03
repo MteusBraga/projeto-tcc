@@ -39,33 +39,49 @@ app.post("/generate", async (req, res) => {
   // `;
 
   const prompt = `
-Gere ${quantidade} questão(ões) de matemática do ${ano} do ensino médio sobre ${topico} - ${subTopico}. 
+Gere ${quantidade} questão(ões) de matemática do ${ano} do ensino médio sobre ${topico}, especificamente sobre ${subTopico}.
 
 REGRAS IMPORTANTES:
-1. Evite enunciados muito semelhantes entre si
+1. Evite questões com enunciados muito semelhantes entre si
 2. Evite enunciados simples demais com pouco texto
-3. Cada questão deve ter um enunciado claro e 5 alternativas (A, B, C, D, E)
-4. Apenas uma alternativa deve ser correta
-5. Forneça justificativa detalhada da resposta correta
-6. Use formatação LaTeX para equações, funções e fórmulas
-7. NÃO use escape Unicode para caracteres especiais (use "ã" em vez de "\\u00e3")
-8. Mantenha a formatação LaTeX dentro de $...$ ou $$...$$
+3. As questões devem ter um enunciado claro e 5 alternativas (A, B, C, D, E), sendo apenas uma correta
+4. Forneça também a justificativa da resposta correta
+5. Use APENAS caracteres UTF-8 normais (não use sequências Unicode escapadas como \\u00e9)
+6. Para equações matemáticas, use formatação LaTeX entre cifrões $...$
+7. Mantenha o texto em português do Brasil com acentuação correta
+FORMATO DA RESPOSTA (APENAS JSON):
+[{
+  "enunciado": "texto com $equações$ em LaTeX quando necessário",
+  "alternativas": {
+    "A": "texto da alternativa A",
+    "B": "texto da alternativa B", 
+    "C": "texto da alternativa C",
+    "D": "texto da alternativa D",
+    "E": "texto da alternativa E"
+  },
+  "correta": "B",
+  "justificativa": "explicação detalhada com $equações$ quando necessário"
+}]
 
-A saída deve ser APENAS um JSON válido neste formato:
-[
-  {
-    "enunciado": "texto com fórmulas em $\\LaTeX$",
-    "alternativas": {
-      "A": "alternativa A",
-      "B": "alternativa B", 
-      "C": "alternativa C",
-      "D": "alternativa D",
-      "E": "alternativa E"
-    },
-    "correta": "B",
-    "justificativa": "explicação detalhada com $\\LaTeX$"
-  }
-]
+EXEMPLO CORRETO:
+{
+  "enunciado": "Resolva a equação $x^2 - 5x + 6 = 0$",
+  "alternativas": {
+    "A": "$x = 1$ e $x = 6$",
+    "B": "$x = 2$ e $x = 3$", 
+    "C": "$x = -2$ e $x = -3$",
+    "D": "$x = 0$ e $x = 5$",
+    "E": "Não tem solução real"
+  },
+  "correta": "B",
+  "justificativa": "Fatorando a equação: $(x-2)(x-3) = 0$, logo $x = 2$ ou $x = 3$"
+}
+
+EXEMPLO INCORRETO (não use Unicode escapado):
+{
+  "enunciado": "Resolva a equa\\u00e7\\u00e3o $x^2 - 5x + 6 = 0$",
+  ...
+}
 `;
 
   try {
