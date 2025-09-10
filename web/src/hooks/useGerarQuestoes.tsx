@@ -7,7 +7,9 @@ interface Questao {
   enunciado: string;
   alternativas: Record<string, string>;
   correta: string;
-  justificativa: string;
+  justificativaRapida: string;
+  justificativaDetalhada: string;
+  justificativaAlternativasErradas: Record<string, string>;
 }
 
 interface Params {
@@ -15,19 +17,40 @@ interface Params {
   ano: string;
   topico: string;
   subtopico: string[];
-  modelo: string;
+  nivel: string;
 }
+
 const urlDev = "http://localhost:3001/generate";
-const urlProd = "https://api-projeto-tcc.onrender.com/generate";
+
 export function useGerarQuestoes() {
   return useMutation<Questao[], Error, Params>({
     mutationFn: async (params: Params) => {
-      const res = await fetch(urlProd, {
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        throw new Error("Usuário não autenticado");
+      }
+
+      const res = await fetch(urlDev, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(params),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          ...params,
+          subtopico: params.subtopico.join(", "),
+        }),
       });
+
+      if (res.status === 401) {
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        throw new Error("Sessão expirada. Faça login novamente.");
+      }
+
       if (!res.ok) throw new Error("Erro ao gerar questões");
+
       return res.json();
     },
   });

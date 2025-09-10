@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "module": "nodenext",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     "moduleResolution": "nodenext",
     "target": "es2020",
     "sourceMap": true,
