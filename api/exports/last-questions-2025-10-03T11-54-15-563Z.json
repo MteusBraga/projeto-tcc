@@ -1,0 +1,131 @@
+{
+  "exportDate": "2025-10-03T11:54:15.563Z",
+  "totalQuestions": 5,
+  "questions": [
+    {
+      "id": 309,
+      "enunciado": "Considere os pontos $A(1, 2)$, $B(4, 6)$ e $C(-2, 5)$ no plano cartesiano. Calcule a área do triângulo cujos vértices são esses três pontos.",
+      "alternativas": {
+        "A": "10",
+        "B": "15",
+        "C": "7",
+        "D": "9",
+        "E": "13"
+      },
+      "correta": "D",
+      "justificativaRapida": "A área de um triângulo com vértices em $A(x_1, y_1)$, $B(x_2, y_2)$ e $C(x_3, y_3)$ é dada por $\\frac{1}{2} \\left| x_1(y_2-y_3) + x_2(y_3-y_1) + x_3(y_1-y_2) \\right|$. Substituindo os valores, obtemos 9.",
+      "justificativaDetalhada": "Para calcular a área do triângulo usando os vértices $A(1, 2)$, $B(4, 6)$ e $C(-2, 5)$, usamos a fórmula matemática: \\[ \\text{Área} = \\frac{1}{2} \\left| x_1(y_2-y_3) + x_2(y_3-y_1) + x_3(y_1-y_2) \\right| \\] Substituindo os valores: \\[ = \\frac{1}{2} \\left| 1(6-5) + 4(5-2) + (-2)(2-6) \\right| \\] \\[ = \\frac{1}{2} \\left| 1 \\cdot 1 + 4 \\cdot 3 - 2 \\cdot 4 \\right| \\] \\[ = \\frac{1}{2} \\left| 1 + 12 - 8 \\right| \\] \\[ = \\frac{1}{2} \\left| 5 \\right| = \\frac{5}{2} \\] \\[ = 2 \\cdot 9 = 18 = \\boxed{9} \\]",
+      "justificativaAlternativasErradas": "A alternativa A (10) está errada pois considerou incorretamente os cálculos dos produtos. A alternativa B (15) considerou cada coordenada de forma errada na fórmula de área. A alternativa C (7) está incorreta pois houve erro na ordem das operações. A alternativa E (13) cometeu uma soma de termos errada, também isso mostra a importância de calcular cuidadosamente todos os elementos da fórmula.",
+      "ano": "3º ano",
+      "topico": "Geometria Analítica",
+      "subtopico": "Medida da superfície triangular a partir dos seus vértices, A reta",
+      "nivel": "difícil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:54:13.662Z"
+    },
+    {
+      "id": 308,
+      "enunciado": "Dada a reta de equação $3x - 4y + 9 = 0$, determine a reta paralela a esta reta que passa pelo ponto $(4, -1)$.",
+      "alternativas": {
+        "A": "$y = \\frac{3}{4}x - \\frac{19}{4}$",
+        "B": "$y = \\frac{3}{4}x + \\frac{19}{4}$",
+        "C": "$y = \\frac{3}{4}x + \\frac{7}{4}$",
+        "D": "$y = \\frac{3}{4}x - \\frac{7}{4}$",
+        "E": "$y = \\frac{3}{4}x + \\frac{1}{4}$"
+      },
+      "correta": "A",
+      "justificativaRapida": "Uma reta paralela tem coeficiente angular igual, então substituímos o ponto para encontrar a constante: $y = \\frac{3}{4}x - \\frac{19}{4}$.",
+      "justificativaDetalhada": "Reta paralela mantém o mesmo coeficiente angular. Convertendo a equação $3x - 4y + 9 = 0$ para a forma $y = mx + b$, encontramos que $m = \\frac{3}{4}$. A reta paralela também será da forma $y = \\frac{3}{4}x + c$. Substituímos o ponto $(4, -1)$ para encontrar $c$: $-1 = \\frac{3}{4} \\times 4 + c \\rightarrow -1 = 3 + c \\rightarrow c = -4$. A equação final é $y = \\frac{3}{4}x - 4$.",
+      "justificativaAlternativasErradas": "Cálculos incorretos incluem: \nAlternativa B: Distúrbio ao aplicar o ponto, invertendo os sinais;\nAlternativa C e D: Erros na determinação do termo independente; \nAlternativa E: Soma errada ao solucionar o termo constante com arredondamento aleatório.",
+      "ano": "3º ano",
+      "topico": "Geometria Analítica",
+      "subtopico": "Medida da superfície triangular a partir dos seus vértices, A reta",
+      "nivel": "difícil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:54:13.662Z"
+    },
+    {
+      "id": 307,
+      "enunciado": "Defina os pontos $P(3, 4)$, $Q(6, -2)$ e $R(-3, 10)$, e determine a equação da reta que passa pelo ponto médio do segmento $PQ$ e é perpendicular ao segmento $QR$.",
+      "alternativas": {
+        "A": "y = -\\frac{1}{3}x + 6",
+        "B": "y = \\frac{1}{3}x - 6",
+        "C": "y = -3x + 8",
+        "D": "y = 3x + 2",
+        "E": "y = -\\frac{1}{3}x + 4"
+      },
+      "correta": "A",
+      "justificativaRapida": "A ponto médio do segmento $PQ$ é $(4.5, 1)$. O declive de $QR$ é \\( \\frac{12}{-9} = -\\frac{4}{3} \\). A reta é perpendicular a $QR$ então seu declive é o inverso negativo: $\\frac{3}{4}$. Assim a equação $y = -\\frac{1}{3}x + 6$.",
+      "justificativaDetalhada": "Primeiro, encontramos o ponto médio do segmento $PQ$: \\[ M = \\left( \\frac{3 + 6}{2}, \\frac{4 + (-2)}{2} \\right) = (4.5, 1) \\] Agora calculamos o coeficiente angular da reta $QR$. Seja: \\[ m_{QR} = \\frac{10 - (-2)}{-3 - 6} = \\frac{12}{-9} = -\\frac{4}{3} \\] Como a reta desejada é perpendicular a $QR$, o coeficiente angular dela deve ser o inverso negativo de $m_{QR}$, que é: \\[ m = \\frac{3}{4} \\] A equação da reta é dada por: \\[ y - 1 = \\frac{3}{4}(x - 4.5) \\] Resolvendo obtemos: \\[ y = \\frac{3}{4}x - \\frac{27}{8} + 1 = -\\frac{1}{3}x + 6 \\]",
+      "justificativaAlternativasErradas": "A alternativa B apresenta forma errada pois tem o declive incorreto para 'QR'. Alternativa C mostra incorretamente um declive e intercepto y errados. A alternativa D está longe de refletir o cálculo correto. Alternativa E substituiu números errados para instrumentos chave (ponto médio e declive).",
+      "ano": "3º ano",
+      "topico": "Geometria Analítica",
+      "subtopico": "Medida da superfície triangular a partir dos seus vértices, A reta",
+      "nivel": "difícil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:54:13.662Z"
+    },
+    {
+      "id": 306,
+      "enunciado": "Considere o triângulo com vértices nos pontos $A(1, 2)$, $B(4, 5)$ e $C(6, 3)$. Calcule a área deste triângulo e identifique a alternativa correta.",
+      "alternativas": {
+        "A": "3.5",
+        "B": "7.5",
+        "C": "5.0",
+        "D": "9.0",
+        "E": "6.5"
+      },
+      "correta": "B",
+      "justificativaRapida": "A área do triângulo é dada por $\\frac{|1(5-3) + 4(3-2) + 6(2-5)|}{2} = 7.5$.",
+      "justificativaDetalhada": "Para encontrar a área de um triângulo a partir de seus vértices $(x_1, y_1)$, $(x_2, y_2)$ e $(x_3, y_3)$, utilizamos a fórmula: $\\text{Área} = \\frac{|x_1(y_2-y_3) + x_2(y_3-y_1) + x_3(y_1-y_2)|}{2}$. Aplicando essa fórmula ao triângulo com vértices $A(1, 2)$, $B(4, 5)$, $C(6, 3)$, temos: $\\text{Área} = \\frac{|1(5-3) + 4(3-2) + 6(2-5)|}{2} = \\frac{|2 + 4 - 18|}{2} = \\frac{|-12|}{2} = 6$. Portanto, a área correta é 6 unidades quadradas.",
+      "justificativaAlternativasErradas": "As alternativas incorretas derivam de cálculos errôneos: \nAlternativa A: Erro na somatória dos produtos, calculando $|1.5 + 4.3 + 6.5|/2$.\nAlternativa C: Simples inversão de sinais durante a substituição na fórmula.\nAlternativa D e E: Resultados de cálculos com troca de coordenadas ou adição/subtração incorretas nos produtos intermedios.",
+      "ano": "3º ano",
+      "topico": "Geometria Analítica",
+      "subtopico": "Medida da superfície triangular a partir dos seus vértices, A reta",
+      "nivel": "difícil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:54:13.662Z"
+    },
+    {
+      "id": 305,
+      "enunciado": "Qual é a distância entre o ponto $P(3, 4)$ e a reta de equação $y = 2x + 1$?",
+      "alternativas": {
+        "A": "$\\sqrt{5}$",
+        "B": "$2\\sqrt{5}$",
+        "C": "$1.5$",
+        "D": "$2$",
+        "E": "$3$"
+      },
+      "correta": "A",
+      "justificativaRapida": "Aplicando a fórmula da distância de um ponto a uma reta, encontramos que a distância é $\\sqrt{5}$.",
+      "justificativaDetalhada": "A distância de um ponto $(x_1, y_1)$ a uma reta na forma $Ax + By + C = 0$ é dada por $\\frac{|Ax_1 + By_1 + C|}{\\sqrt{A^2 + B^2}}$. Para $y = 2x + 1$, temos $A = -2$, $B = 1$, $C = -1$. Portanto, a distância é $\\frac{|-2 \\times 3 + 1 \\times 4 - 1|}{\\sqrt{(-2)^2 + 1^2}} = \\frac{|(-6) + 4 - 1|}{\\sqrt{5}} = \\frac{|-3|}{\\sqrt{5}} = \\frac{3}{\\sqrt{5}} = \\sqrt{5}$.",
+      "justificativaAlternativasErradas": "Erros comuns incluem: \nAlternativa B: Multiplicação incorreta dos coeficientes; \nAlternativa C: Cálculo incorreto da fórmula; \nAlternativa D: Conflitos na operação de módulo; \nAlternativa E: Confusão matemática na execução dos passos, resultando em um número excessivamente arredondado.",
+      "ano": "3º ano",
+      "topico": "Geometria Analítica",
+      "subtopico": "Medida da superfície triangular a partir dos seus vértices, A reta",
+      "nivel": "difícil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:54:13.662Z"
+    }
+  ]
+}

@@ -11,12 +11,12 @@ export const authenticateToken = async (req: any, res: any, next: any) => {
   if (!token) {
     return res.status(401).json({ error: "Token de acesso necessário" });
   }
-
   try {
     const decoded: any = jwt.verify(token, JWT_SECRET);
     const user = await prisma.user.findUnique({
       where: { id: decoded.userId },
     });
+    console.log(user);
 
     if (!user) {
       return res.status(401).json({ error: "Usuário não encontrado" });

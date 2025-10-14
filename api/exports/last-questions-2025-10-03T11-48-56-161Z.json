@@ -1,0 +1,131 @@
+{
+  "exportDate": "2025-10-03T11:48:56.161Z",
+  "totalQuestions": 5,
+  "questions": [
+    {
+      "id": 289,
+      "enunciado": "Em um triângulo retângulo, os catetos medem 9 cm e 12 cm. Qual é o comprimento da hipotenusa?",
+      "alternativas": {
+        "A": "10 cm",
+        "B": "15 cm",
+        "C": "13 cm",
+        "D": "16 cm",
+        "E": "14 cm"
+      },
+      "correta": "B",
+      "justificativaRapida": "A hipotenusa pode ser encontrada usando o Teorema de Pitágoras: $c = \\sqrt{a^2 + b^2} = \\sqrt{9^2 + 12^2} = 15$ cm.",
+      "justificativaDetalhada": "O Teorema de Pitágoras é usado para triângulos retângulos e relaciona os comprimentos dos lados. Supondo $a = 9$ cm e $b = 12$ cm como os catetos, e $c$ como a hipotenusa, temos $c^2 = a^2 + b^2$. Calculando temos $c^2 = 9^2 + 12^2 = 81 + 144 = 225$, logo $c = \\sqrt{225} = 15$ cm.",
+      "justificativaAlternativasErradas": "Alternativa A (10 cm) é incorreta pois não é resultado da soma dos quadrados dos catetos. Alternativa C (13 cm) pertence a outro triplo pitagórico. Alternativa D (16 cm) e E (14 cm) são escolhidas aleatoriamente, mas não satisfazem a equação $c = \\sqrt{81 + 144} = 15$.",
+      "ano": "2º ano",
+      "topico": "Trigonometria",
+      "subtopico": "Teorema de Pitágoras, Lei dos senos",
+      "nivel": "difícil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:48:26.605Z"
+    },
+    {
+      "id": 288,
+      "enunciado": "Em um triângulo não retângulo, os lados medem 8 cm, 15 cm e 17 cm. Qual é o ângulo oposto ao lado de 17 cm quando aplicamos a Lei dos Senos?",
+      "alternativas": {
+        "A": "$45^\\circ$",
+        "B": "$60^\\circ$",
+        "C": "$90^\\circ$",
+        "D": "$120^\\circ$",
+        "E": "$135^\\circ$"
+      },
+      "correta": "C",
+      "justificativaRapida": "O lado de 17 cm é o maior, formando o ângulo $90^\\circ$ pois $8^2 + 15^2 = 17^2$, confirmando que é um triângulo retângulo pelo Teorema de Pitágoras.",
+      "justificativaDetalhada": "Embora o problema menciona a Lei dos Senos, notamos pelos lados fornecidos (8 cm, 15 cm, 17 cm), que o triângulo é retângulo, pois $8^2 + 15^2 = 17^2$. Assim, o ângulo oposto ao lado maior (17 cm) é $90^\\circ$. Caso aplicássemos a Lei dos Senos: $\\frac{17}{\\sin(\\theta)} = \\frac{15}{\\sin(\\alpha)} = \\frac{8}{\\sin(\\beta)}$, porém, pelo Teorema de Pitágoras já sabemos que é um ângulo reto.",
+      "justificativaAlternativasErradas": "As alternativas 'A', 'B', 'D', e 'E' representam ângulos que não correspondem ao lado maior em um triângulo retângulo formado: \n- 'A' e 'B' (45° e 60°) são ângulos comuns em triângulos especiais, mas aqui, não correspondem à definição dada pelos lados na pergunta. \n- 'D' e 'E' (120° e 135°) são ângulos maiores que 90° e não seriam formados no contexto deste triângulo retângulo onde o ângulo oposto ao maior lado é $90^\\circ$.",
+      "ano": "2º ano",
+      "topico": "Trigonometria",
+      "subtopico": "Teorema de Pitágoras, Lei dos senos",
+      "nivel": "difícil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:48:26.605Z"
+    },
+    {
+      "id": 287,
+      "enunciado": "Dado um triângulo isósceles $\\triangle DEF$ com $DE = DF = 10$ cm e ângulo $\\angle EDF = 45^{\\circ}$. Use a lei dos senos para encontrar o comprimento do lado $EF$.",
+      "alternativas": {
+        "A": "12 cm",
+        "B": "14 cm",
+        "C": "$10\\sqrt{2}$ cm",
+        "D": "15 cm",
+        "E": "11 cm"
+      },
+      "correta": "C",
+      "justificativaRapida": "Na fórmula, $\\frac{DE}{\\sin \\angle EDF} = \\frac{EF}{\\sin 90^{\\circ}}$. Assim, $EF = 10\\sqrt{2}$ cm.",
+      "justificativaDetalhada": "No triângulo isósceles, $DE = DF = 10$ cm, $\\angle EDF = 45^{\\circ}$. Pela lei dos senos, $\\frac{DE}{\\sin \\angle EDF} = \\frac{EF}{\\sin \\angle DEF}$. Como $\\angle DEF = 90^{\\circ}$, $\\sin 90^{\\circ} = 1$. Assim, $10 / \\sin 45^{\\circ} = EF / 1$, simplificando à $EF = 10\\sqrt{2}$ cm.",
+      "justificativaAlternativasErradas": "Alternativa A (12 cm) e B (14 cm) são pouco prováveis para respostas de um ângulo de 45°. Alternativa D (15 cm) é grande demais e E (11 cm) é muito próxima sem base matemática.",
+      "ano": "2º ano",
+      "topico": "Trigonometria",
+      "subtopico": "Teorema de Pitágoras, Lei dos senos",
+      "nivel": "difícil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:48:26.605Z"
+    },
+    {
+      "id": 286,
+      "enunciado": "Em um triângulo retângulo, os catetos medem respectivamente 7 cm e 24 cm. Qual é a medida da hipotenusa?",
+      "alternativas": {
+        "A": "25 cm",
+        "B": "26 cm",
+        "C": "23 cm",
+        "D": "24,5 cm",
+        "E": "28 cm"
+      },
+      "correta": "A",
+      "justificativaRapida": "A hipotenusa é encontrada pelo Teorema de Pitágoras: $c = \\sqrt{7^2 + 24^2} = 25$ cm.",
+      "justificativaDetalhada": "Para encontrar a hipotenusa em um triângulo retângulo, utilizamos o Teorema de Pitágoras. Dados os catetos $a = 7$ cm e $b = 24$ cm, a hipotenusa $c$ é encontrada pela fórmula $c = \\sqrt{a^2 + b^2}$. Substituindo os valores, temos $c = \\sqrt{7^2 + 24^2} = \\sqrt{49 + 576} = \\sqrt{625} = 25$ cm. Portanto, a hipotenusa mede 25 cm.",
+      "justificativaAlternativasErradas": "As alternativas 'B', 'C', 'D', e 'E' correspondem a cálculos errados da hipotenusa: \n- 'B' sugere 26 cm, que seria o resultado de $\\sqrt{7^2 + 24^2 + x}$ com um valor extra adicionado inadvertidamente. \n- 'C' sugere 23 cm, que é incorreto pois $\\sqrt{625} \\neq 23$. \n- 'D' sugere 24,5 cm, sem base matemática correta pelo Teorema de Pitágoras. \n- 'E' sugere 28 cm sem fundamento, pois ultrapassa o valor correto de 25 cm determinado pelo cálculo correto.",
+      "ano": "2º ano",
+      "topico": "Trigonometria",
+      "subtopico": "Teorema de Pitágoras, Lei dos senos",
+      "nivel": "difícil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:48:26.605Z"
+    },
+    {
+      "id": 285,
+      "enunciado": "Em um triângulo $\\triangle ABC$, os lados $a = 8$ cm, $b = 15$ cm e o ângulo $\\angle C = 60^{\\circ}$. Usando a lei dos senos, qual é a medida de $\\angle A$?",
+      "alternativas": {
+        "A": "30°",
+        "B": "45°",
+        "C": "55°",
+        "D": "50°",
+        "E": "25°"
+      },
+      "correta": "D",
+      "justificativaRapida": "Aplicando a lei dos senos, $\\frac{a}{\\sin A} = \\frac{b}{\\sin C}$. Calculamos $\\angle A = 50^{\\circ}$.",
+      "justificativaDetalhada": "A lei dos senos afirma que $\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}$. Dados $a = 8$, $b = 15$ e $\\angle C = 60^{\\circ}$, temos $\\sin C = \\sin 60^{\\circ} = \\frac{\\sqrt{3}}{2}$. A equação fica: $\\frac{8}{\\sin A} = \\frac{15}{\\frac{\\sqrt{3}}{2}}$. Resolvendo para $\\sin A$, temos: $\\sin A = \\frac{8 \\times \\frac{\\sqrt{3}}{2}}{15} = \\frac{4 \\sqrt{3}}{15}$. Usando tabelas ou calculadora, $\\angle A \\approx 50^{\\circ}$.",
+      "justificativaAlternativasErradas": "Alternativa A (30°) é muito pequena considerando a razão dada. Alternativa B (45°) é um bom palpite, mas não satisfaz a razão correta. Alternativa C (55°) e E (25°) diferem dos resultados corretos pela calculadora.",
+      "ano": "2º ano",
+      "topico": "Trigonometria",
+      "subtopico": "Teorema de Pitágoras, Lei dos senos",
+      "nivel": "difícil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:48:26.605Z"
+    }
+  ]
+}

@@ -1,16 +1,8 @@
 // hooks/useGerarQuestoes.ts
 "use client";
 
+import { Questao } from "@/types/questao";
 import { useMutation } from "@tanstack/react-query";
-
-interface Questao {
-  enunciado: string;
-  alternativas: Record<string, string>;
-  correta: string;
-  justificativaRapida: string;
-  justificativaDetalhada: string;
-  justificativaAlternativasErradas: Record<string, string>;
-}
 
 interface Params {
   quantidade: number;
@@ -46,12 +38,14 @@ export function useGerarQuestoes() {
       if (res.status === 401) {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
+        window.location.href = "/login";
         throw new Error("Sessão expirada. Faça login novamente.");
       }
 
       if (!res.ok) throw new Error("Erro ao gerar questões");
 
-      return res.json();
+      const data = await res.json();
+      return data as Questao[];
     },
   });
 }

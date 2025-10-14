@@ -7,12 +7,39 @@ const JWT_SECRET = process.env.JWT_SECRET || "seu_segredo_jwt_aqui";
 
 export const handleSignUp = async (req, res) => {
   try {
-    const { email, password, nome } = req.body;
+    const { email, password, nome, perfil, ano } = req.body;
 
-    if (!email || !password || !nome) {
-      return res
-        .status(400)
-        .json({ error: "Email, senha e nome são obrigatórios" });
+    if (!email || !password || !nome || !perfil) {
+      return res.status(400).json({
+        error: "Email, senha, nome e perfil são obrigatórios",
+      });
+    }
+
+    // Validar perfil
+    if (!["ALUNO", "PROFESSOR"].includes(perfil)) {
+      return res.status(400).json({
+        error: "Perfil deve ser ALUNO ou PROFESSOR",
+      });
+    }
+
+    // Validar ano se for aluno
+    if (perfil === "ALUNO" && !ano) {
+      return res.status(400).json({
+        error: "Ano é obrigatório para alunos",
+      });
+    }
+
+    if (perfil === "ALUNO" && !["1º ano", "2º ano", "3º ano"].includes(ano)) {
+      return res.status(400).json({
+        error: "Ano deve ser 1º ano, 2º ano ou 3º ano",
+      });
+    }
+
+    // Ano não deve ser enviado para professores
+    if (perfil === "PROFESSOR" && ano) {
+      return res.status(400).json({
+        error: "Ano não deve ser informado para professores",
+      });
     }
 
     // Verificar se usuário já existe
@@ -33,13 +60,23 @@ export const handleSignUp = async (req, res) => {
         email,
         password: hashedPassword,
         nome,
+        perfil,
+        ano: perfil === "ALUNO" ? ano : null,
       },
     });
 
     // Gerar token JWT
-    const token = jwt.sign({ userId: user.id, email: user.email }, JWT_SECRET, {
-      expiresIn: "24h",
-    });
+    const token = jwt.sign(
+      {
+        userId: user.id,
+        email: user.email,
+        perfil: user.perfil,
+      },
+      JWT_SECRET,
+      {
+        expiresIn: "24h",
+      }
+    );
 
     res.json({
       token,
@@ -47,6 +84,8 @@ export const handleSignUp = async (req, res) => {
         id: user.id,
         email: user.email,
         nome: user.nome,
+        perfil: user.perfil,
+        ano: user.ano,
       },
     });
   } catch (error) {
@@ -79,9 +118,17 @@ export const handleSignIn = async (req, res) => {
     }
 
     // Gerar token JWT
-    const token = jwt.sign({ userId: user.id, email: user.email }, JWT_SECRET, {
-      expiresIn: "24h",
-    });
+    const token = jwt.sign(
+      {
+        userId: user.id,
+        email: user.email,
+        perfil: user.perfil,
+      },
+      JWT_SECRET,
+      {
+        expiresIn: "24h",
+      }
+    );
 
     res.json({
       token,
@@ -89,6 +136,8 @@ export const handleSignIn = async (req, res) => {
         id: user.id,
         email: user.email,
         nome: user.nome,
+        perfil: user.perfil,
+        ano: user.ano,
       },
     });
   } catch (error) {

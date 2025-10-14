@@ -1,0 +1,131 @@
+{
+  "exportDate": "2025-10-03T11:47:22.319Z",
+  "totalQuestions": 5,
+  "questions": [
+    {
+      "id": 284,
+      "enunciado": "Considere a função quadrática $f(x) = x^2 - 4x + 3$. Qual é um dos zeros dessa função?",
+      "alternativas": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "correta": "A",
+      "justificativaRapida": "Substituir $f(x) = 0$ resulta na equação $(x-1)(x-3) = 0$, então $x = 1$ ou $x = 3$.",
+      "justificativaDetalhada": "Para encontrar os zeros da função quadrática $f(x) = x^2 - 4x + 3$, precisamos resolver a equação $x^2 - 4x + 3 = 0$. Podemos fatorar essa equação como $(x-1)(x-3) = 0$. Assim, temos duas soluções: $x = 1$ e $x = 3$. Os zeros de uma função quadrática são os valores de $x$ para os quais a função é igual a zero.",
+      "justificativaAlternativasErradas": "B: $x = 2$ não é uma solução, pois ao substituir na equação resulta em 1. C: $x = 3$ também é uma solução correta, mas não é a alternativa escolhida para resposta neste caso. D: $x = 4$ resulta em um valor diferente de 0. E: $x = 5$ resulta em um valor diferente de 0.",
+      "ano": "1º ano",
+      "topico": "Função quadrática",
+      "subtopico": "Zero da função quadrática, Introdução e conceitos básicos",
+      "nivel": "médio",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:47:02.932Z"
+    },
+    {
+      "id": 283,
+      "enunciado": "Considere a função quadrática $f(x) = x^2 - 5x + 6$. Qual é o valor dos zeros da função?",
+      "alternativas": {
+        "A": "1 e 6",
+        "B": "2 e 3",
+        "C": "5 e 6",
+        "D": "-2 e -3",
+        "E": "0 e 5"
+      },
+      "correta": "B",
+      "justificativaRapida": "Os zeros da função são as soluções da equação $x^2 - 5x + 6 = 0$, que são $x = 2$ e $x = 3$.",
+      "justificativaDetalhada": "Para encontrar os zeros da função quadrática $f(x) = x^2 - 5x + 6$, devemos resolver a equação $x^2 - 5x + 6 = 0$. Primeiro, verificamos se ela pode ser fatorada. Os coeficientes são $a = 1$, $b = -5$ e $c = 6$. Procuramos dois números que multiplicados dão $c = 6$ e somados dão $b = -5$. Esses números são $-2$ e $-3$. Assim, podemos fatorar a equação como $(x - 2)(x - 3) = 0$. Cada fator resulta em um zero: $x - 2 = 0$ resulta em $x = 2$, e $x - 3 = 0$ resulta em $x = 3$.",
+      "justificativaAlternativasErradas": "A) Tanto 1 quanto 6 não são raízes verificáveis através da equação $x^2 - 5x + 6 = 0$. C) 5 e 6 não satisfazem a equação quando substituídos. D) As raízes -2 e -3 não são soluções corretas da equação. E) 0 não resolve a equação e 5 não é um produto de seus coeficientes.",
+      "ano": "1º ano",
+      "topico": "Função quadrática",
+      "subtopico": "Zero da função quadrática, Introdução e conceitos básicos",
+      "nivel": "médio",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:47:02.932Z"
+    },
+    {
+      "id": 282,
+      "enunciado": "Se $f(x) = 2x^2 + 5x - 3$, calcule a soma dos zeros da função quadrática.",
+      "alternativas": {
+        "A": "-\\frac{5}{2}",
+        "B": "\\frac{3}{2}",
+        "C": "2",
+        "D": "-5",
+        "E": "5"
+      },
+      "correta": "A",
+      "justificativaRapida": "A soma dos zeros de $ax^2 + bx + c$ é dada por $-\\frac{b}{a}$. Aqui, $-\\frac{5}{2}$.",
+      "justificativaDetalhada": "Para uma função quadrática $ax^2 + bx + c$, a soma dos zeros pode ser encontrada pela fórmula $-\\frac{b}{a}$. No caso da função $f(x) = 2x^2 + 5x - 3$, temos $a = 2$ e $b = 5$: $-\\frac{b}{a} = -\\frac{5}{2}$. A soma dos zeros não dependem do valor de $c$.",
+      "justificativaAlternativasErradas": "B: \\frac{3}{2} é calculado incorretamente. C: 2 não é o resultado de $-\\frac{b}{a}$. D: -5 é incorreto pois $a \\neq 1$. E: 5 é apenas o valor de $b$ sem a operação necesaria.",
+      "ano": "1º ano",
+      "topico": "Função quadrática",
+      "subtopico": "Zero da função quadrática, Introdução e conceitos básicos",
+      "nivel": "médio",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:47:02.932Z"
+    },
+    {
+      "id": 281,
+      "enunciado": "Considere que uma função quadrática $g(x) = x^2 + 4x + 4$ representa a altura de um objeto em movimento. Determine para quais valores de $x$ o objeto atinge o nível do solo.",
+      "alternativas": {
+        "A": "-4",
+        "B": "2",
+        "C": "-2",
+        "D": "0",
+        "E": "4"
+      },
+      "correta": "C",
+      "justificativaRapida": "Para $x = -2$, o objeto atinge o nível do solo como solução da equação $x^2 + 4x + 4 = 0$.",
+      "justificativaDetalhada": "Precisamos encontrar os zeros da função $g(x) = x^2 + 4x + 4$ para determinar quando o objeto toca o solo. Isso ocorre quando $g(x) = 0$. A equação $x^2 + 4x + 4 = 0$ pode ser resolvida reconhecendo que é um quadrado perfeito: $(x + 2)^2 = 0$. Tirando a raiz quadrada dos dois lados, obtemos $x + 2 = 0$, que simplifica para $x = -2$. Assim, o objeto atinge o solo em $x = -2$.",
+      "justificativaAlternativasErradas": "A) Somente -2 é a raiz da forma fatorada $(x + 2)^2$. B) 2 não resolve a equação pois $g(2) \\neq 0$. D) 0 não satisfaz a equação $x^2 + 4x + 4 = 0$. E) 4 não está relacionado com a resolução real ou fatorizada da equação.",
+      "ano": "1º ano",
+      "topico": "Função quadrática",
+      "subtopico": "Zero da função quadrática, Introdução e conceitos básicos",
+      "nivel": "médio",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:47:02.932Z"
+    },
+    {
+      "id": 280,
+      "enunciado": "Determine o valor de $m$ para o qual a função $f(x) = x^2 + 2x + m$ tem um único zero real.",
+      "alternativas": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "-1",
+        "E": "4"
+      },
+      "correta": "4",
+      "justificativaRapida": "Para ter um único zero, o discriminante deve ser zero, logo $\\Delta = b^2 - 4ac = 0$, o que ocorre quando $m = 1$.",
+      "justificativaDetalhada": "Uma função quadrática tem um único zero real quando seu discriminante $\\Delta = b^2 - 4ac$ é igual a zero. Considerando $f(x) = x^2 + 2x + m$, temos: $a = 1$, $b = 2$, e $c = m$. Assim, $\\Delta = 2^2 - 4\\times1\\times m = 4 - 4m$. Para ter um único zero, $\\Delta = 0$, então $4 - 4m = 0 \\Rightarrow m = 1$.",
+      "justificativaAlternativasErradas": "A: Para $m = 0$, a função tem dois zeros reais distintos. B: Com $m = 1$, a função tem um único zero, correto. C: Para $m = 2$, a função tem dois zeros distintos. D: Para $m = -1$, a função também apresenta dois zeros distintos.",
+      "ano": "1º ano",
+      "topico": "Função quadrática",
+      "subtopico": "Zero da função quadrática, Introdução e conceitos básicos",
+      "nivel": "médio",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:47:02.932Z"
+    }
+  ]
+}

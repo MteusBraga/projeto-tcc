@@ -9,4 +9,3 @@ const app = express();
 app.use(bodyParser.json()).use(cors()).use(router);
 
 export { app };
-app.listen(3001, () => console.log("API rodando na porta 3001"));

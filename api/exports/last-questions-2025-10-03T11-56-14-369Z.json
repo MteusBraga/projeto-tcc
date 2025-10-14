@@ -1,0 +1,131 @@
+{
+  "exportDate": "2025-10-03T11:56:14.369Z",
+  "totalQuestions": 5,
+  "questions": [
+    {
+      "id": 314,
+      "enunciado": "A secção cônica resultante do corte de um cone por um plano paralelo a uma geratriz é:",
+      "alternativas": {
+        "A": "Círculo",
+        "B": "Elipse",
+        "C": "Parábola",
+        "D": "Hipérbole",
+        "E": "Linha reta"
+      },
+      "correta": "C",
+      "justificativaRapida": "Um corte paralelo a uma geratriz produz uma parábola, devido à maneira como o plano intersecta o cone.",
+      "justificativaDetalhada": "Quando um cone é cortado por um plano paralelo a uma de suas geratrizes, a abertura do plano é constante, criando uma curva com uma única direção de abertura. Isso define a parábola. Uma parábola tem a forma característica devido à sua derivação geométrica e à sua propriedade de refletir o caminho da luz.",
+      "justificativaAlternativasErradas": "A: Um círculo resulta de um corte perpendicular ao eixo do cone. B: Uma elipse surge de um corte que não é paralelo ao eixo ou a uma geratriz, mas inclinado. D: Uma hipérbole é formada por cortes que intersectam ambas as partes do cone. E: Uma linha reta não é obtida por este tipo de corte, a menos que o plano só toque o vértice do cone.",
+      "ano": "3º ano",
+      "topico": "Circunferências, Cônicas",
+      "subtopico": "Equações da circunferência, Secções cônicas",
+      "nivel": "médio",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:56:04.795Z"
+    },
+    {
+      "id": 313,
+      "enunciado": "Qual das equações abaixo representa uma parábola cujo vértice está na origem e com eixo de simetria ao longo do eixo $y$?",
+      "alternativas": {
+        "A": "$x^2 = 4y$",
+        "B": "$y^2 = 4x$",
+        "C": "$x = y^2 + 1$",
+        "D": "$y = x^2 - 2x + 1$",
+        "E": "$x^2 + y^2 = 1$"
+      },
+      "correta": "A",
+      "justificativaRapida": "A equação $x^2 = 4y$ representa uma parábola com vértice na origem e eixo de simetria ao longo do $y$.",
+      "justificativaDetalhada": "Parábolas cuja forma canônica é $x^2 = 4py$ têm vértice na origem $(0, 0)$ e eixo de simetria ao longo do eixo $y$. Aqui, $p$ é a distância do vértice ao foco. A equação $x^2 = 4y$ está nessa forma, indicando que o vértice está na origem e que abre para cima ou para baixo.\nVamos verificar as opções:\n- A) $x^2 = 4y$: Está na forma $x^2 = 4py$.\n- B) $y^2 = 4x$: Está na forma $y^2 = 4px$; eixo ao longo de $x$.\n- C) $x = y^2 + 1$: Não está na forma canônica. Deslocada em relação ao eixo $y$.\n- D) $y = x^2 - 2x + 1$: Não coincide exatamente com $(h, k) = (0, 0)$ após completar o quadrado.\n- E) $x^2 + y^2 = 1$: É uma circunferência, não uma parábola.",
+      "justificativaAlternativasErradas": "Alternativa B está na forma $y^2 = 4px$, indicando eixo ao longo de $x$ e não $y$. Alternativa C não está na forma canônica de parábolas com vértice na origem. Alternativa D é uma parábola deslocada (vértice não na origem). Alternativa E é uma circunferência, completamente diferente de uma parábola.",
+      "ano": "3º ano",
+      "topico": "Circunferências, Cônicas",
+      "subtopico": "Equações da circunferência, Secções cônicas",
+      "nivel": "médio",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:56:04.795Z"
+    },
+    {
+      "id": 312,
+      "enunciado": "Considere a equação $x^2 + y^2 -6x + 8y + 9 = 0$. Determine o centro e o raio da circunferência descrita por esta equação.",
+      "alternativas": {
+        "A": "Centro: $(3, -4)$, Raio: $1$",
+        "B": "Centro: $(3, -4)$, Raio: $5$",
+        "C": "Centro: $(6, 8)$, Raio: $7$",
+        "D": "Centro: $(-3, 4)$, Raio: $5$",
+        "E": "Centro: $(3, 4)$, Raio: $5$"
+      },
+      "correta": "B",
+      "justificativaRapida": "Ao reescrever a equação na forma padrão, obtemos $(x - 3)^2 + (y + 4)^2 = 5^2$, indicando centro $(3, -4)$ e raio $5$.",
+      "justificativaDetalhada": "Para encontrar o centro e o raio da circunferência, primeiro precisamos completar os quadrados da equação geral $x^2 + y^2 -6x + 8y + 9 = 0$. Reescrevamos a equação:\n1. Agrupando termos: $(x^2 - 6x) + (y^2 + 8y) = -9$.\n2. Completando o quadrado para $x$: $x^2 - 6x = (x - 3)^2 - 9$.\n3. Completando o quadrado para $y$: $y^2 + 8y = (y + 4)^2 - 16$.\n4. Substituindo na equação: $(x - 3)^2 - 9 + (y + 4)^2 - 16 = -9$.\n5. Simplificando, obtemos $(x - 3)^2 + (y + 4)^2 = 25$.\nAssim, a equação na forma padrão é $(x - h)^2 + (y - k)^2 = r^2$, com centro $(h, k) = (3, -4)$ e raio $r = 5$.",
+      "justificativaAlternativasErradas": "Alternativa A tem o raio incorreto; deveria ser $5$, não $1$. Alternativa C tem o centro e raio errados; o correto seria $(3, -4)$ e $5$. Alternativa D inverte os sinais do centro; deveria ser $(3, -4)$, não $(-3, 4)$. Alternativa E tem a coordenada $y$ do centro errada; deveria ser $-4$, não $4$.",
+      "ano": "3º ano",
+      "topico": "Circunferências, Cônicas",
+      "subtopico": "Equações da circunferência, Secções cônicas",
+      "nivel": "médio",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:56:04.795Z"
+    },
+    {
+      "id": 311,
+      "enunciado": "Qual das opções abaixo representa a equação da circunferência no plano cujo centro está na origem e que passa pelo ponto (3, 4)?",
+      "alternativas": {
+        "A": "$x^2 + y^2 = 9$",
+        "B": "$x^2 + y^2 = 16$",
+        "C": "$x^2 + y^2 = 25$",
+        "D": "$(x - 3)^2 + (y - 4)^2 = 0$",
+        "E": "$(x + 3)^2 + (y + 4)^2 = 25$"
+      },
+      "correta": "C",
+      "justificativaRapida": "A distância do centro até o ponto (3, 4) é o raio da circunferência: $r = \\sqrt{3^2 + 4^2} = 5$. Assim, a equação é $x^2 + y^2 = 25$.",
+      "justificativaDetalhada": "A equação geral de uma circunferência com centro na origem $(0, 0)$ é dada por $x^2 + y^2 = r^2$, onde $r$ é o raio. Para encontrar o raio, calculamos a distância entre o centro e o ponto dado (3, 4) usando a fórmula da distância entre dois pontos: $r = \\sqrt{(3 - 0)^2 + (4 - 0)^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$. Substituindo $r = 5$ na equação geral, temos $x^2 + y^2 = 25$.",
+      "justificativaAlternativasErradas": "A: $x^2 + y^2 = 9$ corresponde a um raio $r = 3$, o que não é consistente com a distância do centro até o ponto (3, 4). B: $x^2 + y^2 = 16$ implica em um raio $r = 4$, também inconsistente. D e E apresentam equações de circunferências que não são centradas na origem ou com o raio correto.",
+      "ano": "3º ano",
+      "topico": "Circunferências, Cônicas",
+      "subtopico": "Equações da circunferência, Secções cônicas",
+      "nivel": "médio",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:56:04.795Z"
+    },
+    {
+      "id": 310,
+      "enunciado": "Determine a excentricidade da elipse com a equação $\\frac{x^2}{16} + \\frac{y^2}{9} = 1$.",
+      "alternativas": {
+        "A": "1",
+        "B": "$\\frac{1}{4}$",
+        "C": "$\\frac{3}{4}$",
+        "D": "$\\frac{3\\sqrt{7}}{4}$",
+        "E": "$\\frac{\\sqrt{7}}{4}$"
+      },
+      "correta": "E",
+      "justificativaRapida": "Para uma elipse $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$, a excentricidade $e$ é dada por $e = \\frac{\\sqrt{a^2 - b^2}}{a}$. Aqui, $a = 4, b = 3$, então $e = \\frac{\\sqrt{16 - 9}}{4} = \\frac{\\sqrt{7}}{4}$.",
+      "justificativaDetalhada": "A excentricidade de uma elipse indica o alongamento da elipse. Dados $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$, $a$ é o maior entre os denominadores e é o semi-eixo maior. A excentricidade é calculada por $e = \\frac{\\sqrt{a^2 - b^2}}{a}$. Aqui, $a^2 = 16$ e $b^2 = 9$. Portanto, $e = \\frac{\\sqrt{16 - 9}}{4} = \\frac{\\sqrt{7}}{4}$, indicando que a elipse não é muito alongada.",
+      "justificativaAlternativasErradas": "A: Uma excentricidade de 1 corresponde a uma parábola, não a uma elipse. B: $\\frac{1}{4}$ e C: $\\frac{3}{4}$ são valores incorretos para $e$, sugirindo cálculos incorretos. D sugere $e = \\frac{3\\sqrt{7}}{4}$, mas não considera corretamente $a$ e $b$.",
+      "ano": "3º ano",
+      "topico": "Circunferências, Cônicas",
+      "subtopico": "Equações da circunferência, Secções cônicas",
+      "nivel": "médio",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:56:04.795Z"
+    }
+  ]
+}

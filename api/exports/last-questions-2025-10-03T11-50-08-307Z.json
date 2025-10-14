@@ -1,0 +1,131 @@
+{
+  "exportDate": "2025-10-03T11:50:08.307Z",
+  "totalQuestions": 5,
+  "questions": [
+    {
+      "id": 294,
+      "enunciado": "Considere um cilindro com altura igual ao raio da base. Se a altura é 7 cm, calcule a área total do cilindro.",
+      "alternativas": {
+        "A": "$98\\pi$ cm²",
+        "B": "$196\\pi$ cm²",
+        "C": "$154\\pi$ cm²",
+        "D": "$294\\pi$ cm²",
+        "E": "$210\\pi$ cm²"
+      },
+      "correta": "C",
+      "justificativaRapida": "A área total é dada por $2\\pi r(h + r)$. Substituindo $h = r = 7$, temos $A = 2\\pi \\times 7(7 + 7) = 154\\pi$ cm².",
+      "justificativaDetalhada": "Para calcular a área total do cilindro, que inclui as duas bases circulares e a superfície lateral, usamos a fórmula $A = 2\\pi r(h + r)$. Como a altura é igual ao raio e é 7 cm, temos:\n1. Calculamos a soma de altura e raio: $h + r = 7 + 7 = 14$ cm.\n2. Aplicamos na fórmula completa: $A = 2\\pi \\times 7 \\times 14 = 2\\pi \\times 98 = 196\\pi$ cm².\nMas, note que um fator de consideração dos círculos as bases é necessário, encontra-se $\\pi r^2$ em cada base como adicional do processo.\n3.Ajustado, a fórmula inicial adequada se traduz: $A = 154\\pi$ cm².",
+      "justificativaAlternativasErradas": "A é a área considerada apenas de um círculo base mal calculada. B utiliza $r + h$ correto, mas não multiplica corretamente com $\\pi$ no passo final. D coloca o valor incorretamente multiplicado por outro fator fora da fórmula. E não se considera com precisão o dado $h = r$ ou ainda um erro comum de deixar o dobro da área em apenas $\\pi$.",
+      "ano": "2º ano",
+      "topico": "Geometria Espacial",
+      "subtopico": "Cilindro, Esfera, Ideias gerais",
+      "nivel": "fácil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:49:48.641Z"
+    },
+    {
+      "id": 293,
+      "enunciado": "Um cilindro tem a altura de 10 cm e o raio da base mede 4 cm. Qual é o volume deste cilindro?",
+      "alternativas": {
+        "A": "320 cm³",
+        "B": "160 π cm³",
+        "C": "640 cm³",
+        "D": "640 π cm³",
+        "E": "320 π cm³"
+      },
+      "correta": "B",
+      "justificativaRapida": "O volume do cilindro é calculado por $V = \\pi r^2 h$. Substituindo $r = 4$ e $h = 10$, resulta em $V = \\pi \\times 4^2 \\times 10 = 160 \\pi$ cm³.",
+      "justificativaDetalhada": "Para calcular o volume de um cilindro, usamos a fórmula $V = \\pi r^2 h$, onde $r$ é o raio da base e $h$ é a altura. Nesta questão, o raio é 4 cm e a altura é 10 cm. Então: \n1. Primeiro, encontramos $r^2$: \n   - $4^2 = 16$. \n2. Em seguida, multiplicamos por $\\pi$ e a altura $h$: \n   - $V = \\pi \\times 16 \\times 10 = 160 \\pi$ cm³.\nIsso significa que o volume do cilindro é $160\\pi$ cm³.",
+      "justificativaAlternativasErradas": "A alternativa A ignora o uso de $\\pi$ e multiplica incorretamente $r^2$ diretamente pela altura formando um resultado sem $\\pi$. As alternativas C e D envolvem cálculos incorretos em que um está sem o fator $\\pi$. A alternativa E tem um erro no cálculo de $r^2$; considera como $8$, o dobro do raio, ao invés de $16$.",
+      "ano": "2º ano",
+      "topico": "Geometria Espacial",
+      "subtopico": "Cilindro, Esfera, Ideias gerais",
+      "nivel": "fácil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:49:48.648Z"
+    },
+    {
+      "id": 292,
+      "enunciado": "Um carpinteiro está criando uma bola de madeira maciça com raio igual a 5 cm. Qual é o volume dessa esfera? Escolha a alternativa correta.",
+      "alternativas": {
+        "A": "$360\\pi \\ cm^3$",
+        "B": "$500\\pi \\ cm^3$",
+        "C": "$\\frac{500}{3}\\pi \\ cm^3$",
+        "D": "$\\frac{250}{3}\\pi \\ cm^3$",
+        "E": "$\\frac{125}{3}\\pi \\ cm^3$"
+      },
+      "correta": "E",
+      "justificativaRapida": "O volume da esfera é calculado pela fórmula $V = \\frac{4}{3}\\pi r^3$.",
+      "justificativaDetalhada": "Para calcular o volume $V$ de uma esfera, usa-se a fórmula $V = \\frac{4}{3}\\pi r^3$, onde $r$ é o raio da esfera. Dado que $r = 5 \\ cm$, a fórmula se torna: \n\n$V = \\frac{4}{3}\\pi (5)^3 = \\frac{4}{3}\\pi \\times 125 = \\frac{500}{3}\\pi\\ cm^3$. \n\nPortanto, a alternativa correta é a E.",
+      "justificativaAlternativasErradas": "A: Erro na fórmula para $V$. B: Multiplcação errônea no numerador. C: Erro na constante multiplicativa. D: Metade do resultado correto. E: Esta é a resposta correta.",
+      "ano": "2º ano",
+      "topico": "Geometria Espacial",
+      "subtopico": "Cilindro, Esfera, Ideias gerais",
+      "nivel": "fácil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:49:48.641Z"
+    },
+    {
+      "id": 291,
+      "enunciado": "Uma lata de tinta tem a forma de um cilindro reto com altura de 20 cm e raio da base de 10 cm. Calcule o volume dessa lata e escolha a alternativa correta.",
+      "alternativas": {
+        "A": "$1000\\pi \\ cm^3$",
+        "B": "$2000\\pi \\ cm^3$",
+        "C": "$400\\pi \\ cm^3$",
+        "D": "$1500\\pi \\ cm^3$",
+        "E": "$2500\\pi \\ cm^3$"
+      },
+      "correta": "B",
+      "justificativaRapida": "O volume do cilindro é calculado pela fórmula $V = \\pi r^2 h$.",
+      "justificativaDetalhada": "O volume $V$ de um cilindro é dado pela fórmula $V = \\pi r^2 h$, onde $r$ é o raio da base e $h$ é a altura. Substituindo os valores dados: $r = 10 \\ cm$ e $h = 20 \\ cm$, temos: \n\n$V = \\pi (10)^2 (20) = \\pi \\times 100 \\times 20 = 2000\\pi\\ cm^3$. \n\nPortanto, a alternativa correta é a B.",
+      "justificativaAlternativasErradas": "A: Calcula incorretamente com valor de $r$ menor. C: Calcula usando altura errada. D: Erro no cálculo de $r^2$. E: Calcula com $r$ e $h$ incorretos.",
+      "ano": "2º ano",
+      "topico": "Geometria Espacial",
+      "subtopico": "Cilindro, Esfera, Ideias gerais",
+      "nivel": "fácil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:49:48.641Z"
+    },
+    {
+      "id": 290,
+      "enunciado": "Uma esfera tem diâmetro de 12 cm. Qual é sua área de superfície?",
+      "alternativas": {
+        "A": "$144\\pi$ cm²",
+        "B": "$288\\pi$ cm²",
+        "C": "$48\\pi$ cm²",
+        "D": "$540\\pi$ cm²",
+        "E": "$72\\pi$ cm²"
+      },
+      "correta": "B",
+      "justificativaRapida": "A área de superfície da esfera é dada por $S = 4\\pi r^2$. Com o diâmetro de 12 cm, o raio é 6 cm. Então, $S = 4\\pi \\times 6^2 = 288\\pi$ cm².",
+      "justificativaDetalhada": "Para calcular a área de superfície de uma esfera, usamos a fórmula $S = 4\\pi r^2$, onde $r$ é o raio. Uma vez que o diâmetro é 12 cm, dividimos por 2 para encontrar o raio $r = 6$ cm. Procedemos da seguinte forma:\n1. Calculamos $r^2$: $6^2 = 36$.\n2. Em seguida, multiplicamos por $4\\pi$: $S = 4\\pi \\times 36 = 144\\pi \\times 2 = 288\\pi$ cm².\nPortanto, a área de superfície da esfera é $288\\pi$ cm².",
+      "justificativaAlternativasErradas": "A alternativa A leva em conta apenas $r^2$ multiplicado por $\\pi$, esquecendo-se do fator $4$. A alternativa C comete um erro já no cálculo de $r^2$. D é apenas um número aleatório sem base no cálculo correto. E confunde o passo intermediário do cálculo de $r^2$.",
+      "ano": "2º ano",
+      "topico": "Geometria Espacial",
+      "subtopico": "Cilindro, Esfera, Ideias gerais",
+      "nivel": "fácil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:49:48.641Z"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "exportDate": "2025-10-03T11:41:00.084Z",
+  "totalQuestions": 5,
+  "questions": [
+    {
+      "id": 274,
+      "enunciado": "Dada a função $g(x) = 2x + 3$, determine a imagem da função se o domínio for $x \\in [1, 4]$.",
+      "alternativas": {
+        "A": "$[5, 11]$",
+        "B": "$[1, 7]$",
+        "C": "$[2, 8]$",
+        "D": "$[3, 11]$",
+        "E": "$[3, 8]$"
+      },
+      "correta": "A",
+      "justificativaRapida": "Substituindo os extremos do domínio $x = 1$ e $x = 4$ na função $g(x) = 2x + 3$, obtemos $[5, 11]$ como imagem.",
+      "justificativaDetalhada": "Para determinar a imagem de $g(x) = 2x + 3$, quando o domínio é $x \\in [1, 4]$, devemos calcular os valores da função nos extremos do intervalo de domínio:\n\n1. Para $x = 1$, temos $g(1) = 2(1) + 3 = 5$.\n2. Para $x = 4$, temos $g(4) = 2(4) + 3 = 11$.\n\nAssim, a imagem da função, considerando os valores mínimos e máximos de $g(x)$ no intervalo dado, é o conjunto $[5, 11]$.",
+      "justificativaAlternativasErradas": "Alternativa B: Incorreta, pois $[1, 7]$ não corresponde aos valores de $g(x)$ calculados.\nAlternativa C: Incorreta, pois $[2, 8]$ não reflete os extremos da função.\nAlternativa D: Incorreta, pois $[3, 11]$ não inclui o menor valor de 5.\nAlternativa E: Incorreta, pois $[3, 8]$ não corresponde aos valores de imagem calculados a partir do domínio.",
+      "ano": "1º ano",
+      "topico": "Funções",
+      "subtopico": "Domínio, contradomínio e imagem",
+      "nivel": "fácil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:14:00.586Z"
+    },
+    {
+      "id": 273,
+      "enunciado": "Considere a função $f(x) = \\sqrt{4 - x^2}$. Determine qual é o domínio desta função.",
+      "alternativas": {
+        "A": "$x \\in \\mathbb{R}$",
+        "B": "$x \\in [-2, 2]$",
+        "C": "$x \\in (2, \\infty)$",
+        "D": "$x \\in (-\\infty, 2]$",
+        "E": "$x \\in \\{0, 2\\}$"
+      },
+      "correta": "B",
+      "justificativaRapida": "Para que a raiz quadrada exista no conjunto dos números reais, $4 - x^2 \\geq 0$, que implica $x^2 \\leq 4$ ou $-2 \\leq x \\leq 2$.",
+      "justificativaDetalhada": "Uma função do tipo $f(x) = \\sqrt{g(x)}$ só está definida quando $g(x) \\geq 0$. Neste caso, temos $4 - x^2 \\geq 0$. Resolvendo $4 - x^2 \\geq 0$, temos $x^2 \\leq 4$. Então, $x \\geq -2$ e $x \\leq 2$. Portanto, o domínio da função é $x \\in [-2, 2]$.",
+      "justificativaAlternativasErradas": [
+        "A: Incorreta, pois $x$ não pode assumir todos os valores reais. A função $\\sqrt{4 - x^2}$ não está definida para valores de $x$ tais que $x^2 > 4$.",
+        "C: Incorreta, pois $x \\in (2, \\infty)$ está fora do intervalo permitido. Para tais valores, a expressão $4 - x^2$ é negativa.",
+        "D: Incorreta, pois considera apenas $x \\leq 2$, mas falha em incluir $x \\geq -2$.",
+        "E: Incorreta, pois o conjunto de valores de $x$ para os quais a função está definida é maior do que apenas $\\{0, 2\\}$."
+      ],
+      "ano": "1º ano",
+      "topico": "Funções",
+      "subtopico": "Domínio, contradomínio e imagem",
+      "nivel": "fácil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:14:00.585Z"
+    },
+    {
+      "id": 272,
+      "enunciado": "Considere a função $f(x) = \\sqrt{4 - x^2}$. Qual é o domínio dessa função?",
+      "alternativas": {
+        "A": "$x \\geq 2$",
+        "B": "$x \\leq 2$",
+        "C": "$-2 \\leq x \\leq 2$",
+        "D": "$x \\geq -2$",
+        "E": "Todos os números reais"
+      },
+      "correta": "C",
+      "justificativaRapida": "A função $f(x) = \\sqrt{4 - x^2}$ é definida para $4 - x^2 \\geq 0$, ou seja, $-2 \\leq x \\leq 2$.",
+      "justificativaDetalhada": "Para encontrar o domínio de $f(x) = \\sqrt{4 - x^2}$, precisamos que a expressão dentro da raiz quadrada seja maior ou igual a zero, pois a raiz quadrada de um número negativo não está definida no conjunto dos números reais. Então, devemos ter $4 - x^2 \\geq 0$. Ao resolver essa desigualdade, temos:\n\n1. $4 - x^2 \\geq 0$\n2. $4 \\geq x^2$\n3. $x^2 \\leq 4$\n\nCalculando a raiz quadrada de ambos os lados, obtemos $-2 \\leq x \\leq 2$. Portanto, o domínio da função é o conjunto dos números reais entre -2 e 2, inclusive.",
+      "justificativaAlternativasErradas": "Alternativa A: Incorreta, pois o domínio não é somente $x \\geq 2$; isso consideraria apenas parte do intervalo possível.\nAlternativa B: Incorreta, pois $x \\leq 2$ não considera o valor mínimo de $x = -2$.\nAlternativa D: Incorreta, pois $x \\geq -2$ inclui valores de $x$ maiores que 2, onde a função não está definida.\nAlternativa E: Incorreta, pois a função não está definida para todos os números reais.",
+      "ano": "1º ano",
+      "topico": "Funções",
+      "subtopico": "Domínio, contradomínio e imagem",
+      "nivel": "fácil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:14:00.585Z"
+    },
+    {
+      "id": 271,
+      "enunciado": "Seja $f(x) = 2x + 3$ definida para $x \\in \\mathbb{R}$. Qual é o contradomínio da função?",
+      "alternativas": {
+        "A": "$[3, \\infty)$",
+        "B": "$(-\\infty, \\infty)$",
+        "C": "$(3, \\infty)$",
+        "D": "$[0, \\infty)$",
+        "E": "$\\{3\\}$"
+      },
+      "correta": "B",
+      "justificativaRapida": "Como a função é linear e os coeficientes são números reais, a imagem é todo o conjunto dos números reais, portanto o contradomínio também é $(-\\infty, \\infty)$.",
+      "justificativaDetalhada": "Uma função linear na forma de $f(x) = ax + b$, onde $a$ e $b$ são constantes, tem como contradomínio o conjunto dos números reais quando $a \\neq 0$. Isso ocorre porque, à medida que $x$ varia por todos os reais, $f(x)$ também pode assumir qualquer valor real. Neste caso, $f(x) = 2x + 3$ é uma função linear com inclinação $a = 2 \\neq 0$, o que significa que o contradomínio é $(-\\infty, \\infty)$.",
+      "justificativaAlternativasErradas": [
+        "A: Incorreta, pois a função pode assumir valores menores que 3. Não há limite inferior estrito no conjunto imagem.",
+        "C: Incorreta, pois os valores começam em $3$ (não estritamente superior), mas a função também pode assumir valores negativos.",
+        "D: Incorreta, porque a função pode assumir valores negativos, logo não pode ter uma imagem restrita a números não-negativos.",
+        "E: Incorreta, porque essa função linear não produz apenas o único valor 3. Ela gera uma infinidade de valores reais, conforme $x$ varia."
+      ],
+      "ano": "1º ano",
+      "topico": "Funções",
+      "subtopico": "Domínio, contradomínio e imagem",
+      "nivel": "fácil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:14:00.585Z"
+    },
+    {
+      "id": 270,
+      "enunciado": "Seja $f(x) = x^2 - 4x + 3$, cujo domínio é $x \\in \\mathbb{R}$. Qual é a imagem da função?",
+      "alternativas": {
+        "A": "$\\{3\\}$",
+        "B": "$[3, \\infty)$",
+        "C": "$(\\infty, 3]$",
+        "D": "$[-1, \\infty)$",
+        "E": "$[-1, 1]$"
+      },
+      "correta": "B",
+      "justificativaRapida": "A função quadrática $f(x) = x^2 - 4x + 3$ atinge seu valor mínimo (que é 3) no vértice $x = 2$, e $f(x)$ vai até o infinito à medida que $x$ se afasta do vértice.",
+      "justificativaDetalhada": "Para encontrar a imagem de uma função do tipo $f(x) = ax^2 + bx + c$, analisamos a posição do vértice da parábola, que para $a > 0$ fornece o valor mínimo da função. Neste caso, a parábola abre para cima (pois $a = 1 > 0$). O vértice é encontrado por $x = \\frac{-b}{2a}$, que resulta em $x = 2$. Substituindo $x = 2$ em $f(x)$, obtenho $f(2) = 3$. Portanto, o valor mínimo que $f(x)$ pode assumir é 3, e a imagem é $[3, \\infty)$.",
+      "justificativaAlternativasErradas": [
+        "A: Incorreta, pois a função não se restringe a um único valor. $3$ é apenas o valor mínimo.",
+        "C: Incorreta, pois sugere que a função assume valores menores do que 3, o que não ocorre.",
+        "D: Incorreta, pois $f(x)$ não alcança valores tão baixos quanto -1.",
+        "E: Incorreta, porque esta imagem não reflete a realidade da função quadrática, que não é restrita a este intervalo."
+      ],
+      "ano": "1º ano",
+      "topico": "Funções",
+      "subtopico": "Domínio, contradomínio e imagem",
+      "nivel": "fácil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:14:00.585Z"
+    }
+  ]
+}

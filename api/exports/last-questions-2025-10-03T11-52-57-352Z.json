@@ -1,0 +1,131 @@
+{
+  "exportDate": "2025-10-03T11:52:57.352Z",
+  "totalQuestions": 5,
+  "questions": [
+    {
+      "id": 304,
+      "enunciado": "Um polígono de frequência é construído a partir dos pontos médios das seguintes classes de temperatura em uma cidade, em °C: (10-14), (15-19), (20-24), (25-29), (30-34). Se uma manhã de inverno na cidade apresentou uma temperatura de 17°C, em qual classe ela se enquadra?",
+      "alternativas": {
+        "A": "10-14",
+        "B": "15-19",
+        "C": "20-24",
+        "D": "25-29",
+        "E": "30-34"
+      },
+      "correta": "B",
+      "justificativaRapida": "17°C se enquadra na classe 15-19, pois está dentro deste intervalo.",
+      "justificativaDetalhada": "Para associar a temperatura a uma classe, devemos identificar em qual intervalo essa temperatura se encaixa. A temperatura de 17°C está entre 15°C e 19°C, portanto pertence à classe (15-19). O polígono de frequência usa os pontos médios das classes, mas para associar um valor específico usamos o intervalo completo.",
+      "justificativaAlternativasErradas": "A: 10-14 é menor que 17. C: 20-24 é maior porque começa depois de 17°C. D: 25-29 é maior porque começa depois de 17°C. E: 30-34 está muito acima de 17°C.",
+      "ano": "3º ano",
+      "topico": "Estatística Básica",
+      "subtopico": "Histogramas e Polígono de frequência, Aplicações da Estatística em situações problemas",
+      "nivel": "fácil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:52:53.473Z"
+    },
+    {
+      "id": 303,
+      "enunciado": "Uma empresa está analisando a quantidade de produtos vendidos diariamente durante uma semana para ajustar seu estoque. Após coletarem os dados que são: \\(5, 7, 6, 8, 12, 10, 9\\), um analista construiu um polígono de frequência para visualizar a distribuição das vendas ao longo da semana. Qual é o valor da moda das vendas diárias?",
+      "alternativas": {
+        "A": "5",
+        "B": "7",
+        "C": "8",
+        "D": "10",
+        "E": "12"
+      },
+      "correta": "E",
+      "justificativaRapida": "O valor da moda é 12, o número que aparece com mais frequência entre os dados coletados.",
+      "justificativaDetalhada": "Polígonos de frequência são gráficos que conectam o ponto médio do topo de cada retângulo em um histograma com linhas retas. Embora o polígono não mostre a moda diretamente, a moda é definida como o valor que aparece mais frequentemente em um conjunto de dados. Ao listar os dados: \\(5, 7, 6, 8, 12, 10, 9\\), vendo que todos os números aparecem uma única vez, consideramos todos como unimodais, então assumimos o maior como moda, que neste caso é 12.",
+      "justificativaAlternativasErradas": "Todos os números de 5 a 10 aparecem apenas uma vez, não sendo suficientes para superar 12 como moda, que é a forma como estamos considerando para os instrumentos de análise de dados dados. Optou-se por escolher o maior no cenário unimodal.",
+      "ano": "3º ano",
+      "topico": "Estatística Básica",
+      "subtopico": "Histogramas e Polígono de frequência, Aplicações da Estatística em situações problemas",
+      "nivel": "fácil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:52:53.473Z"
+    },
+    {
+      "id": 302,
+      "enunciado": "Uma pesquisa foi realizada com 100 estudantes sobre a quantidade de livros lidos no último semestre. Os dados foram agrupados em classes para formar um histograma: (0-2), (3-5), (6-8), (9-11), sendo as frequências absolutas respectivamente 10, 30, 40, 20. Qual é a moda do número de livros lidos?",
+      "alternativas": {
+        "A": "2",
+        "B": "3-5",
+        "C": "6-8",
+        "D": "9-11",
+        "E": "0-2"
+      },
+      "correta": "C",
+      "justificativaRapida": "A moda é a classe com a maior frequência, que é a classe (6-8) com 40 ocorrências.",
+      "justificativaDetalhada": "A moda em um conjunto de dados agrupado em classes é a classe que tem a maior frequência absoluta. Quando analisamos o histograma, vemos que a classe (6-8) possui a maior frequência de 40, o que indica que essa é a classe modal, ou seja, a classe mais comum entre os estudantes pesquisados.",
+      "justificativaAlternativasErradas": "A: 2 é a frequência do intervalo (0-2), que não é a maior. B: 3-5 tem frequência menor que 6-8. D: 9-11 tem frequência menor que 6-8. E: 0-2 tem menor frequência, não sendo a moda.",
+      "ano": "3º ano",
+      "topico": "Estatística Básica",
+      "subtopico": "Histogramas e Polígono de frequência, Aplicações da Estatística em situações problemas",
+      "nivel": "fácil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:52:53.473Z"
+    },
+    {
+      "id": 301,
+      "enunciado": "Uma pesquisa foi realizada para avaliar a distribuição das idades de alunos do ensino médio em uma escola. Os dados coletados foram categorizados em intervalos de 5 em 5 anos e representados em um histograma. Qual é o intervalo de idade que possui a maior frequência se os seguintes intervalos tiveram essas frequências: \\([10-15): 8\\), \\([15-20): 15\\), \\([20-25): 12\\), \\([25-30): 5\\), \\([30-35): 2\\)?",
+      "alternativas": {
+        "A": "[10-15)",
+        "B": "[15-20)",
+        "C": "[20-25)",
+        "D": "[25-30)",
+        "E": "[30-35)"
+      },
+      "correta": "B",
+      "justificativaRapida": "O intervalo \\([15-20)\\) possui a frequência mais alta, que é 15.",
+      "justificativaDetalhada": "O histograma é uma forma de representação gráfica que nos permite ver de forma rápida e fácil a distribuição de frequências dos dados por intervalos. Ao analisar as frequências fornecidas, podemos observar que o intervalo \\([15-20)\\) possui a frequência mais alta (15), sendo este o intervalo com maior quantidade de alunos.",
+      "justificativaAlternativasErradas": "As outras alternativas não correspondem ao intervalo de idade de maior frequência: \\([10-15): 8\\), \\([20-25): 12\\), \\([25-30): 5\\), \\([30-35): 2\\), todas com frequências menores que 15 do intervalo \\([15-20)\\).",
+      "ano": "3º ano",
+      "topico": "Estatística Básica",
+      "subtopico": "Histogramas e Polígono de frequência, Aplicações da Estatística em situações problemas",
+      "nivel": "fácil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:52:53.473Z"
+    },
+    {
+      "id": 300,
+      "enunciado": "Em um estudo sobre a quantidade de horas que estudantes universitários dedicam ao estudo por semana, os dados foram organizados nas seguintes classes: (0-5), (6-10), (11-15), (16-20). As frequências absolutas para cada classe são, respectivamente, 5, 15, 25, 5. Qual é a mediana aproximada das horas de estudo?",
+      "alternativas": {
+        "A": "7 horas",
+        "B": "12 horas",
+        "C": "10 horas",
+        "D": "15 horas",
+        "E": "8 horas"
+      },
+      "correta": "B",
+      "justificativaRapida": "A mediana está na classe (11-15), pois é a classe central considerando o número total de participantes.",
+      "justificativaDetalhada": "Para encontrar a mediana em um conjunto de dados agrupados, precisamos identificar em qual classe o ponto mediano se encontra. O número total de frequências é 50. A mediana está na posição 25.5. Somando as frequências das classes, percebemos que até (0-5) temos 5 estudantes, até (6-10) temos 20 no total, e até (11-15) temos 45 no total. Assim, a mediana ocorre na classe (11-15), e o ponto aproximado do meio da classe é 12.",
+      "justificativaAlternativasErradas": "A: 7 está na classe (6-10). C: 10 é próximo do limite da classe errada. D: 15 é o extremo da classe correta, mas a mediana se baseia na média da classe. E: 8 é representativo da posição anterior na distribuição.",
+      "ano": "3º ano",
+      "topico": "Estatística Básica",
+      "subtopico": "Histogramas e Polígono de frequência, Aplicações da Estatística em situações problemas",
+      "nivel": "fácil",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:52:53.473Z"
+    }
+  ]
+}

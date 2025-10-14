@@ -1,0 +1,131 @@
+{
+  "exportDate": "2025-10-03T11:51:24.450Z",
+  "totalQuestions": 5,
+  "questions": [
+    {
+      "id": 299,
+      "enunciado": "Quantas maneiras existem de se escolher 3 pessoas de um grupo de 7 para formar uma comissão, se Eliane e João não podem participar juntos?",
+      "alternativas": {
+        "A": "15",
+        "B": "20",
+        "C": "25",
+        "D": "30",
+        "E": "35"
+      },
+      "correta": "B",
+      "justificativaRapida": "Primeiro, calculamos todas as combinações de 3 pessoas em 7 ($\\binom{7}{3} = 35$). Depois, subtraímos as combinações onde Eliane e João participam juntos ($\\binom{5}{1} = 5$), resultando em 30 - 10 = 20.",
+      "justificativaDetalhada": "Para resolver o problema, utilizamos o princípio básico de combinação. Primeiro calculamos todas as formas de escolher 3 pessoas de 7 sem restrições, que é $\\binom{7}{3} = \\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = 35$. Agora, calculamos as combinações onde Eliane e João estão juntos. Se eles precisam estar juntos, escolhemos 1 pessoa das 5 restantes, $\\binom{5}{1} = 5$. Portanto, existem 5 combinações onde Eliane e João estão na comissão. Subtraímos isso do total para respeitar a restrição: $35 - 15 = 20$.",
+      "justificativaAlternativasErradas": "Alternativa A (15) ignora completamente o grupo de possibilidades ao calcular exclusões. Alternativa C (25) pode resultar de uma subtração incorreta, sem realmente eliminar casos permitidos. Alternativa D (30) e Alternativa E (35) não consideraram a exclusão das condições impostas pelo problema, sendo 30 o número sem subtrair casos inaceitáveis, e 35 é o total de combinações sem restrição.",
+      "ano": "2º ano",
+      "topico": "Análise Combinatória e probabilidade e tratamento da informação",
+      "subtopico": "Permutações, Triângulo de Pascal, Fatorial de um número natural",
+      "nivel": "médio",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:51:08.642Z"
+    },
+    {
+      "id": 298,
+      "enunciado": "Um dado justo de seis faces é lançado três vezes. Qual é a probabilidade de o número 6 aparecer pelo menos uma vez?",
+      "alternativas": {
+        "A": "$\\frac{1}{6}$",
+        "B": "$\\frac{91}{216}$",
+        "C": "$\\frac{125}{216}$",
+        "D": "$\\frac{1}{3}$",
+        "E": "$\\frac{5}{6}$"
+      },
+      "correta": "C",
+      "justificativaRapida": "A probabilidade de não sair 6 em um lançamento é $\\frac{5}{6}$. Para não sair 6 em três lançamentos, é $(\\frac{5}{6})^3$. Logo, a probabilidade complementar é $1 - (\\frac{5}{6})^3$.",
+      "justificativaDetalhada": "Para calcular a probabilidade de pelo menos um 6 aparecer em três lançamentos de dado, primeiro calculamos a probabilidade de não sair o número 6. Em um único lançamento, $P(\\text{não sair 6}) = \\frac{5}{6}$. Desta forma, para três lançamentos: $P(\\text{não sair 6 em 3 lançamentos}) = (\\frac{5}{6})^3$. Assim, $P(\\text{sair pelo menos um 6}) = 1 - (\\frac{5}{6})^3 = 1 - \\frac{125}{216} = \\frac{91}{216}$. Portanto, a probabilidade correta é a complementar, $\\frac{125}{216}$.",
+      "justificativaAlternativasErradas": "Alternativa A falha ao calcular apenas a chance de sair 6 em um lançamento. Alternativa B interpreta erradamente a probabilidade complementar. Alternativa D calcula de forma incorreta as dependências entre os lançamentos. Alternativa E considera todos os lançamentos como 6, que não corresponde ao cenário pedido no problema.",
+      "ano": "2º ano",
+      "topico": "Análise Combinatória e probabilidade e tratamento da informação",
+      "subtopico": "Permutações, Triângulo de Pascal, Fatorial de um número natural",
+      "nivel": "médio",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:51:08.642Z"
+    },
+    {
+      "id": 297,
+      "enunciado": "Qual é o coeficiente do termo $x^3$ no desenvolvimento do binômio $(x + 2)^5$?",
+      "alternativas": {
+        "A": "20",
+        "B": "40",
+        "C": "80",
+        "D": "160",
+        "E": "320"
+      },
+      "correta": "C",
+      "justificativaRapida": "O termo geral para $(x + 2)^5$ é dado por $\\binom{5}{k} x^{5-k} (2)^k$. Para $x^3$, $k = 2$. O coeficiente é $\\binom{5}{2} \\times 2^2 = 10 \\times 4 = 40$.",
+      "justificativaDetalhada": "Para encontrar o coeficiente do termo $x^3$ no desenvolvimento binomial de $(x+2)^5$, utilizamos o Teorema do Binômio, que diz que o termo geral é $T_k = \\binom{n}{k} x^{n-k} a^k$. Aqui, $n = 5$, $a = 2$, e queremos o termo onde o expoente de $x$ é 3. Assim, $n-k = 3 \\implies k = 2$. O termo correspondente é então $T_2 = \\binom{5}{2} x^{5-2} 2^2$. Calculamos então: \\( \\binom{5}{2} = 10 \\) e \\( 2^2 = 4 \\). O coeficiente é $10 \\times 4 = 40$, e o termo é $40x^3$.",
+      "justificativaAlternativasErradas": "As alternativas erradas resultam de cálculos errôneos do coeficiente binomial ou da potência de 2. Alternativa A ignora a multiplicação pelo valor correto de $a^k$. Alternativa B não considera corretamente o coeficiente binomial. Alternativa D multiplica por uma potência de 2 incorreta. Alternativa E comete o erro de usar um valor para $a^k$ como se $k = 5$, que não é necessário, pois buscamos a potência para $k = 2$.",
+      "ano": "2º ano",
+      "topico": "Análise Combinatória e probabilidade e tratamento da informação",
+      "subtopico": "Permutações, Triângulo de Pascal, Fatorial de um número natural",
+      "nivel": "médio",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:51:08.642Z"
+    },
+    {
+      "id": 296,
+      "enunciado": "Um grupo de 6 amigos deseja organizar uma fila para entrar em um cinema. Quantas maneiras distintas eles podem se organizar nessa fila?",
+      "alternativas": {
+        "A": "120",
+        "B": "720",
+        "C": "240",
+        "D": "360",
+        "E": "480"
+      },
+      "correta": "B",
+      "justificativaRapida": "A quantidade de maneiras distintas de organizar 6 pessoas em fila é dada por $6!$, que resulta em 720.",
+      "justificativaDetalhada": "Para resolver essa questão, precisamos entender que estamos lidando com uma permutação de 6 elementos, pois queremos saber de quantas formas podemos organizar 6 amigos em uma fila. Na permutação simples, usamos o fatorial do número de elementos para calcular o total de arranjos possíveis. O fatorial de um número $n$, denotado por $n!$, é o produto de todos os inteiros positivos até $n$. Assim, $6! = 6 \\times 5 \\times 4 \\times 3 \\times 2 \\times 1 = 720$. Portanto, existem 720 maneiras distintas de organizar os 6 amigos na fila.",
+      "justificativaAlternativasErradas": "Alternativa A (120) é o fatorial de 5, $5! = 5 \\times 4 \\times 3 \\times 2 \\times 1$, que está incorreto para organizar 6 pessoas. Alternativa C (240) não possui base na permutação de 6 elementos. Alternativa D (360) é metade de 720, sugerindo incorretamente que apenas metade das permutações foram consideradas. Alternativa E (480) também não está relacionada com o fatorial correto de 6.",
+      "ano": "2º ano",
+      "topico": "Análise Combinatória e probabilidade e tratamento da informação",
+      "subtopico": "Permutações, Triângulo de Pascal, Fatorial de um número natural",
+      "nivel": "médio",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:51:08.642Z"
+    },
+    {
+      "id": 295,
+      "enunciado": "Quantos anagramas distintos podemos formar com as letras da palavra 'ANÁLISE'?",
+      "alternativas": {
+        "A": "1260",
+        "B": "1680",
+        "C": "2520",
+        "D": "5040",
+        "E": "7560"
+      },
+      "correta": "C",
+      "justificativaRapida": "A palavra 'ANÁLISE' tem 7 letras, das quais a letra 'A' repete duas vezes. O número de anagramas é $\\frac{7!}{2!}$.",
+      "justificativaDetalhada": "Para calcular o número de anagramas da palavra 'ANÁLISE', consideramos as permutações das suas letras. A fórmula para permutar $n$ elementos com repetições é \\( \\frac{n!}{p_1! \\times p_2! \\times \\ldots \\times p_k!} \\), onde \\( p_1, p_2, \\ldots, p_k \\) são as contagens das letras que se repetem. No caso de 'ANÁLISE': \\( n = 7 \\) (letras totais), e a letra 'A' se repete 2 vezes. Assim, o número de anagramas é: \\[ \\frac{7!}{2!} = \\frac{5040}{2} = 2520 \\]",
+      "justificativaAlternativasErradas": "As alternativas A, B, D e E falham ao não aplicar corretamente a fórmula de permutações com repetição. A alternativa A considera incorretamente a repetição, enquanto B calcula o fatorial total sem compensar a repetição. A alternativa D ignora a repetição, considerando um fatorial direto de 7. A alternativa E adiciona erros ao não dividir corretamente pelo número de repetições.",
+      "ano": "2º ano",
+      "topico": "Análise Combinatória e probabilidade e tratamento da informação",
+      "subtopico": "Permutações, Triângulo de Pascal, Fatorial de um número natural",
+      "nivel": "médio",
+      "author": {
+        "id": 1,
+        "nome": "Mateus Braga",
+        "email": "mateus@gmail.com"
+      },
+      "createdAt": "2025-10-03T11:51:08.642Z"
+    }
+  ]
+}
