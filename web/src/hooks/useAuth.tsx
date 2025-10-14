@@ -1,6 +1,7 @@
 // hooks/useAuth.ts
 "use client";
 
+import { urldev, urlprod } from "@/utils/url";
 import { useState, useEffect, useCallback } from "react";
 
 interface User {
@@ -31,7 +32,7 @@ export function useAuth() {
     setError(null);
 
     try {
-      const res = await fetch("http://localhost:3001/login", {
+      const res = await fetch(`${urlprod}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -71,7 +72,7 @@ export function useAuth() {
         requestBody.ano = ano;
       }
 
-      const res = await fetch("http://localhost:3001/register", {
+      const res = await fetch(`${urlprod}/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody),

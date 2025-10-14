@@ -2,6 +2,7 @@
 "use client";
 
 import { Questao } from "@/types/questao";
+import { urldev, urlprod } from "@/utils/url";
 import { useMutation } from "@tanstack/react-query";
 
 interface Params {
@@ -12,8 +13,6 @@ interface Params {
   nivel: string;
 }
 
-const urlDev = "http://localhost:3001/generate";
-
 export function useGerarQuestoes() {
   return useMutation<Questao[], Error, Params>({
     mutationFn: async (params: Params) => {
@@ -23,7 +22,7 @@ export function useGerarQuestoes() {
         throw new Error("Usuário não autenticado");
       }
 
-      const res = await fetch(urlDev, {
+      const res = await fetch(`${urlprod}/generate`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
